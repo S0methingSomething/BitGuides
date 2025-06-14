@@ -1,21 +1,32 @@
 name: build-and-deploy-docs
+
 on:
+  # This section adds the manual trigger
+  workflow_dispatch:
+
+  # This section keeps the automatic trigger
   push:
     branches:
       - main
       - master
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
+
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
