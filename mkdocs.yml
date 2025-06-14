@@ -1,0 +1,38 @@
+# Project information
+site_name: BitEdit Tutorials
+site_url: https://S0methingSomething.github.io/BitEdit-Tutorials/
+site_author: S0methingSomething
+site_description: Tutorials for BitEdit.
+
+# Repository
+repo_name: S0methingSomething/BitEdit-Tutorials
+repo_url: https://github.com/S0methingSomething/BitEdit-Tutorials
+
+# Copyright - I've set the year to 2025 based on the current date.
+copyright: Copyright &copy; 2025 S0methingSomething
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
