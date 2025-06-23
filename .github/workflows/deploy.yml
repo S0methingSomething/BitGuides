@@ -1,4 +1,4 @@
-name: Deploy MkDocs Site
+name: Build and Deploy Site on Push
 
 on:
   push:
@@ -16,26 +16,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Filter for relevant file changes
-        id: filter
-        uses: dorny/paths-filter@v3
-        with:
-          filters: |
-            changes:
-              - 'docs/**'
-              - 'mkdocs.yml'
-              - 'requirements.txt' # Also deploy if dependencies change
+      - name: Fetch and Prepare Dynamic Data
+        id: fetch_data
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+          MONETIZATION_URL=$(curl -sL https://api.github.com/repos/S0methingSomething/BitEdit/releases/tags/Latest | jq -r '.assets[] | select(.name=="MonetizationVars.json") | .browser_download_url')
+          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/S0methingSomething/BitBot/main/bot_state.json | jq -r .activePostId)
+          echo "mon_url=${MONETIZATION_URL}" >> $GITHUB_OUTPUT
+          echo "reddit_id=${REDDIT_ID}" >> $GITHUB_OUTPUT
 
-      - name: Set up Python
-        if: steps.filter.outputs.changes == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
+      - name: Update configuration file in-place
+        run: |
+          sed -i "s|latest_monetization_url:.*|latest_monetization_url: \"${{ steps.fetch_data.outputs.mon_url }}\"|g" mkdocs.yml
+          sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"https://www.reddit.com/r/BitLifeApp/comments/${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
 
       - name: Install dependencies
-        if: steps.filter.outputs.changes == 'true'
         run: pip install -r requirements.txt
 
       - name: Deploy to GitHub Pages
-        if: steps.filter.outputs.changes == 'true'
         run: mkdocs gh-deploy --force --clean
