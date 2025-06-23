@@ -9,25 +9,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Filter for relevant file changes
-        # This action checks the files modified in the push.
-        # It will set an output 'changes' to 'true' if a relevant file was modified.
         id: filter
         uses: dorny/paths-filter@v3
         with:
           filters: |
             changes:
-              # Trigger a deployment if content in the 'docs' folder changes...
               - 'docs/**'
-              # OR if the main site configuration file changes.
               - 'mkdocs.yml'
+              - 'requirements.txt' # Also deploy if dependencies change
 
       - name: Set up Python
-        # This step, and all subsequent steps, will only run if the filter detects changes.
         if: steps.filter.outputs.changes == 'true'
         uses: actions/setup-python@v5
         with:
@@ -35,10 +34,8 @@ jobs:
 
       - name: Install dependencies
         if: steps.filter.outputs.changes == 'true'
-        run: pip install mkdocs-material
+        run: pip install -r requirements.txt
 
       - name: Deploy to GitHub Pages
         if: steps.filter.outputs.changes == 'true'
-        permissions:
-          contents: write # Permission is only needed for the deployment step itself.
         run: mkdocs gh-deploy --force --clean
