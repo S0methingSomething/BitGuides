@@ -7,4 +7,4 @@ This site hosts the official tutorials for the BitEdit project.
 !!! note "Work in Progress"
     This documentation is in construction
 
-{{ config.extra.latest_monetization_url }}
+latest_monetization_url
