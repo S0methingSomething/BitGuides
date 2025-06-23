@@ -52,8 +52,8 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/S0methingSomething
   # The following keys are automatically updated by the workflows.
-  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/latest"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
+  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/download/Latest/MonetizationVars"
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeApp/comments/1lgtmcu/"
 
 markdown_extensions:
   - admonition
