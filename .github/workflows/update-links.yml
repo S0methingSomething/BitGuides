@@ -15,19 +15,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Load site configuration
+        id: config
+        uses: antifree/json-to-variables@v1
+        with:
+          filename: 'site_config.json'
+
       - name: Fetch and Prepare Dynamic Data
         id: fetch_data
         run: |
           sudo apt-get update && sudo apt-get install -y jq
-          MONETIZATION_URL=$(curl -sL https://api.github.com/repos/S0methingSomething/BitEdit/releases/tags/Latest | jq -r '.assets[] | select(.name=="MonetizationVars.json") | .browser_download_url')
-          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/S0methingSomething/BitBot/main/bot_state.json | jq -r .activePostId)
+          MONETIZATION_URL=$(curl -sL https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/tags/Latest | jq -r '.assets[] | select(.name=="${{ env.sources_monetization_asset_name }}") | .browser_download_url')
+          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_file_path }} | jq -r .activePostId)
           echo "mon_url=${MONETIZATION_URL}" >> $GITHUB_OUTPUT
           echo "reddit_id=${REDDIT_ID}" >> $GITHUB_OUTPUT
 
       - name: Update configuration file
         run: |
           sed -i "s|latest_monetization_url:.*|latest_monetization_url: \"${{ steps.fetch_data.outputs.mon_url }}\"|g" mkdocs.yml
-          sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"https://www.reddit.com/r/BitLifeApp/comments/${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
+          sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"${{ env.links_reddit_base_url }}${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
