@@ -5,33 +5,31 @@ site_name: BitGuides
 site_author: S0methingSomething
 site_description: Guides for modding BitLife.
 
-# Leave blank if set by the deployment workflow (e.g., GitHub Actions).
+# Leave blank if set by the deployment workflow.
 site_url:
 repo_url:
 
 # -----------------------------------------------------------------------------
-# Navigation
+# Navigation Structure
 # -----------------------------------------------------------------------------
-# Define the navigation structure for a predictable user experience.
-# nav:
-#   - 'Home': 'index.md'
-#   - 'Getting Started':
-#     - 'Introduction': 'getting-started/introduction.md'
-#     - 'Installation': 'getting-started/installation.md'
+nav:
+  - 'Home': 'index.md'
+  - 'Setting up':
+    - 'Requirements': 'setup/requirements.md'
+    - 'Setting up ZArchiver': 'setup/zarchiver.md'
+  - "Unlocking all BitLife IAP's":
+    - 'How to Replace MonetizationVars': 'mod/replacing-monetizationvars.md'
+  - 'FAQ': 'mod/faq.md'
 
 # -----------------------------------------------------------------------------
-# Theme
+# Theme Configuration
 # -----------------------------------------------------------------------------
 theme:
   name: material
   logo: assets/logo.svg
   favicon: assets/favicon.png
-
-  # Enforces a single, permanent dark theme.
   palette:
     scheme: slate
-
-  # Features for a modern, mobile-first documentation site.
   features:
     # Navigation & Header
     - header.autohide
@@ -39,7 +37,6 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.tracking
-
     # Content & Search
     - content.code.copy
     - content.code.wrap
@@ -48,12 +45,15 @@ theme:
 # -----------------------------------------------------------------------------
 # Metadata & Extensions
 # -----------------------------------------------------------------------------
-copyright: Copyright © 2025 S0methingSomething
+copyright: Copyright © 2025 S0methingSomething | Licensed under the Apache License 2.0
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/S0methingSomething
+  # The following keys are automatically updated by the update-links workflow.
+  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/latest"
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeApp/"
 
 markdown_extensions:
   - admonition
