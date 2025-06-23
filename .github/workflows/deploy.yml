@@ -6,14 +6,61 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  # --- JOB 1: UPDATE LINKS BEFORE DEPLOYMENT ---
+  update-links:
     runs-on: ubuntu-latest
+    # This job needs permission to write commits back to the repository.
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch and Prepare Dynamic Data
+        id: fetch_data
+        run: |
+          # Install jq for JSON parsing.
+          sudo apt-get update && sudo apt-get install -y jq
+          
+          # Fetch the direct download URL for MonetizationVars.json from the latest release.
+          MONETIZATION_URL=$(curl -sL https://api.github.com/repos/S0methingSomething/BitEdit/releases/tags/Latest | jq -r '.assets[] | select(.name=="MonetizationVars.json") | .browser_download_url')
+          
+          # Fetch the active post ID from the bot state file.
+          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/S0methingSomething/BitBot/main/bot_state.json | jq -r .activePostId)
+
+          # Make the fetched data available to subsequent steps.
+          echo "mon_url=${MONETIZATION_URL}" >> $GITHUB_OUTPUT
+          echo "reddit_id=${REDDIT_ID}" >> $GITHUB_OUTPUT
+
+      - name: Update configuration file
+        run: |
+          # Use sed to replace the entire line containing the target key.
+          sed -i "s|latest_monetization_url:.*|latest_monetization_url: \"${{ steps.fetch_data.outputs.mon_url }}\"|g" mkdocs.yml
+          sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"https://www.reddit.com/r/BitLifeApp/comments/${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
+
+      - name: Commit and push changes
+        # This action commits changes only if the mkdocs.yml file has been modified.
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Update dynamic links"
+          file_pattern: mkdocs.yml
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
+  # --- JOB 2: DEPLOY THE SITE ---
+  deploy:
+    # This job will only run after the 'update-links' job has successfully completed.
+    needs: update-links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to deploy to the gh-pages branch.
+
+    steps:
+      - name: Checkout repository
+        # This checkout gets the latest commit, including the one from the 'update-links' job.
         uses: actions/checkout@v4
 
       - name: Set up Python
