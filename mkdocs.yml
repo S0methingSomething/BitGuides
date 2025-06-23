@@ -1,41 +1,65 @@
-# Project information
+# -----------------------------------------------------------------------------
+# Project Configuration
+# -----------------------------------------------------------------------------
 site_name: BitGuides
-# The URLs below are set automatically by the deployment workflow.
-# They can be left blank here.
-site_url:
 site_author: S0methingSomething
 site_description: Dynamic tutorials for BitEdit.
 
-# Repository
-# The URL below is set automatically by the deployment workflow.
-# It can be left blank here.
+# Leave blank if set by the deployment workflow (e.g., GitHub Actions).
+site_url:
 repo_url:
 
-# Copyright
-copyright: Copyright &copy; 2025 S0methingSomething
+# -----------------------------------------------------------------------------
+# Navigation
+# -----------------------------------------------------------------------------
+# Define the navigation structure for a predictable user experience.
+# nav:
+#   - 'Home': 'index.md'
+#   - 'Getting Started':
+#     - 'Introduction': 'getting-started/introduction.md'
+#     - 'Installation': 'getting-started/installation.md'
 
-# Configuration
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
 theme:
   name: material
-  features:
-    - navigation.tabs
-    - navigation.top
-    - search.suggest
-    - content.code.copy
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
 
-# Extensions
+  # Enforces a single, permanent dark theme.
+  palette:
+    scheme: slate
+
+  # Features for a modern, mobile-first documentation site.
+  features:
+    # Navigation & Header
+    - header.autohide
+    - navigation.instant
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+
+    # Content & Search
+    - content.code.copy
+    - content.code.wrap
+    - search.suggest
+
+# -----------------------------------------------------------------------------
+# Metadata & Extensions
+# -----------------------------------------------------------------------------
+copyright: Copyright © 2025 S0methingSomething
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/S0methingSomething
+
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
