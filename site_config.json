@@ -1,0 +1,15 @@
+{
+  "_comments": {
+    "sources": "Defines the GitHub repositories to pull dynamic data from.",
+    "links": "Defines the base URLs for constructing final links."
+  },
+  "sources": {
+    "monetization_repo": "S0methingSomething/BitEdit",
+    "monetization_asset_name": "MonetizationVars",
+    "bot_state_repo": "S0methingSomething/BitBot",
+    "bot_state_file_path": "main/bot_state.json"
+  },
+  "links": {
+    "reddit_base_url": "https://www.reddit.com/r/BitLifeApp/comments/"
+  }
+}
