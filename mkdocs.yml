@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 site_name: BitGuides
 site_author: S0methingSomething
-site_description: Dynamic tutorials for BitEdit.
+site_description: Guides for modding BitLife.
 
 # Leave blank if set by the deployment workflow (e.g., GitHub Actions).
 site_url:
