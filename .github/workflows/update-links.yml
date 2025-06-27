@@ -2,21 +2,21 @@ name: Update Dynamic Links (Scheduled)
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    # Runs once per day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   update-links:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Needed to commit changes back to the repo
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Load site configuration
-        id: config
+      - name: Load configuration from JSON file
         uses: antifree/json-to-variables@v1
         with:
           filename: 'site_config.json'
@@ -24,19 +24,25 @@ jobs:
       - name: Fetch and Prepare Dynamic Data
         id: fetch_data
         run: |
+          # Install jq for parsing JSON
           sudo apt-get update && sudo apt-get install -y jq
+
+          # Fetch URLs using variables loaded from the JSON config file
           MONETIZATION_URL=$(curl -sL https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/tags/Latest | jq -r '.assets[] | select(.name=="${{ env.sources_monetization_asset_name }}") | .browser_download_url')
           REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_file_path }} | jq -r .activePostId)
+
+          # Pass the results to the next step
           echo "mon_url=${MONETIZATION_URL}" >> $GITHUB_OUTPUT
           echo "reddit_id=${REDDIT_ID}" >> $GITHUB_OUTPUT
 
-      - name: Update configuration file
+      - name: Update mkdocs.yml configuration file
         run: |
+          # Use sed to replace placeholder URLs with the new ones. The '|' delimiter prevents issues with slashes.
           sed -i "s|latest_monetization_url:.*|latest_monetization_url: \"${{ steps.fetch_data.outputs.mon_url }}\"|g" mkdocs.yml
           sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"${{ env.links_reddit_base_url }}${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: Update dynamic links"
+          commit_message: "chore(docs): Update dynamic links"
           file_pattern: mkdocs.yml
