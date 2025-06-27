@@ -76,14 +76,14 @@ You must start Shizuku using the **Wireless Debugging** method. This is the most
 ## Advanced Customization with BitEdit
 
 !!! tip "For Power Users: Create a Custom Mod"
-    If you want more control and wish to enable or disable specific features yourself, you can use my other project, **BitEdit**.
+    If you want more control and wish to enable or disable specific things yourself on MonetizationVars, you can use my other project, **BitEdit**.
 
     BitEdit is a web tool that lets you edit the `MonetizationVars` file using a simple, human-readable interface. You don't need to understand complex JSON code.
 
     **How it works:**
     1.  Go to the BitEdit web tool: **[Click here to open BitEdit](https://s0methingsomething.github.io/BitEdit/)**
-    2.  Make your desired changes to the features.
-    3.  Download your new, custom `MonetizationVars` file from the tool.
+    2.  Make your desired changes to MonetizationVars.
+    3.  Download your new, `MonetizationVars` file from the tool.
     4.  Follow **Step 3** and **Step 4** of this guide using your newly created file.
 
 ---
