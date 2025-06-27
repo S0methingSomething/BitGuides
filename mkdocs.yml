@@ -14,12 +14,6 @@ repo_url:
 # -----------------------------------------------------------------------------
 nav:
   - 'Home': 'index.md'
-  - 'Setting up':
-    - 'Requirements': 'setup/requirements.md'
-    - 'Setting up ZArchiver': 'setup/zarchiver.md'
-  - "Unlocking all BitLife IAP's":
-    - 'How to Replace MonetizationVars': 'mod/replacing-monetizationvars.md'
-  - 'FAQ': 'mod/faq.md'
 
 # -----------------------------------------------------------------------------
 # Theme Configuration
