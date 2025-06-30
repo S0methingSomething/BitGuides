@@ -32,18 +32,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up a stable Python version
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          # Pin to a specific, stable version to ensure dependency compatibility.
+          python-version: '3.12'
 
       - name: Install uv
-        # Installs the uv binary using the official, recommended script.
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
 
       - name: Add uv to PATH
-        # The installer places uv in ~/.cargo/bin, which must be added to the
-        # GITHUB_PATH so it can be found in subsequent steps.
         run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Configure and cache uv dependencies
@@ -55,8 +53,6 @@ jobs:
             ${{ runner.os }}-uv-
 
       - name: Install Python dependencies with uv
-        # Uses 'uv pip sync' which is the correct, idempotent command for CI.
-        # The --system flag modifies the globally available Python environment.
         run: uv pip sync --system requirements.txt
 
       - name: Build the MkDocs site
