@@ -1,5 +1,4 @@
 # Build and deployment dependencies
 mkdocs
 mkdocs-material
-mkdocs-link-checker-plugin
 pymdown-extensions
