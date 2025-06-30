@@ -1,6 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Allows this workflow to be triggered manually from the GitHub Actions UI.
+  workflow_dispatch:
+
+  # Triggers the workflow on pushes to the 'main' branch, but only for
+  # specific file paths to avoid unnecessary deployments.
   push:
     branches:
       - main
@@ -35,16 +40,10 @@ jobs:
           python-version: 3.x
 
       - name: Configure and cache uv dependencies
-        # This uses the official cache action for explicit control.
         uses: actions/cache@v4
         with:
-          # Defines the path to the directory that should be cached.
           path: ~/.cache/uv
-          # The cache key is composed of the runner OS and a hash of the
-          # requirements file. The cache is only restored if the key is an
-          # exact match. If requirements.txt changes, a new cache is created.
           key: ${{ runner.os }}-uv-${{ hashFiles('**/requirements.txt') }}
-          # A fallback key for partial cache restoration.
           restore-keys: |
             ${{ runner.os }}-uv-
 
