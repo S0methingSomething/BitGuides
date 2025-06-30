@@ -4,9 +4,6 @@
 site_name: BitGuides
 site_author: S0methingSomething
 site_description: Guides for modding BitLife.
-
-# Leave blank if set by the deployment workflow.
-site_url:
 repo_url: https://github.com/S0methingSomething/BitGuides
 
 # -----------------------------------------------------------------------------
@@ -14,27 +11,49 @@ repo_url: https://github.com/S0methingSomething/BitGuides
 # -----------------------------------------------------------------------------
 nav:
   - 'Home': 'index.md'
+  - 'Gameplay':
+    - 'Tips': 'gameplay/tips.md'
+    - 'How to': 'gameplay/how-to.md'
+  - 'Modding':
+    - 'MonetizationVars':
+      - 'Requirements': 'modding/monetizationvars/requirements.md'
+      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlock-iap.md' # RENAMED
+    - "APK's":
+      - 'WARNING': 'modding/apks/warning.md'
+      - 'Mod apk sources': 'modding/apks/sources.md'
 
 # -----------------------------------------------------------------------------
 # Theme Configuration
 # -----------------------------------------------------------------------------
 theme:
   name: material
-  logo: assets/logo.svg
   favicon: assets/favicon.png
   palette:
-    scheme: slate
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
   features:
-    # Navigation & Header
-    - header.autohide
-    - navigation.instant
     - navigation.indexes
     - navigation.top
-    - navigation.tracking
-    # Content & Search
     - content.code.copy
-    - content.code.wrap
-    - search.suggest
+
+# -----------------------------------------------------------------------------
+# Plugins Configuration
+# -----------------------------------------------------------------------------
+plugins:
+  - search
+  - link-checker:
+      allow_dead_links: false
+      # Specifies external links to be ignored by the link-checker plugin.
+      # These are managed by a scheduled workflow and may be temporarily invalid.
+      dont_check_these_links:
+        - https://placeholder.link/monetization
+        - https://placeholder.link/reddit
 
 # -----------------------------------------------------------------------------
 # Metadata & Extensions
@@ -42,17 +61,12 @@ theme:
 copyright: Copyright © 2025 S0methingSomething | Licensed under the Apache License 2.0
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/S0methingSomething
-  # The following keys are automatically updated by the workflows.
-  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/download/Latest/MonetizationVars"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeApp/comments/1lmpyyu/"
+  # Custom variables accessible in templates. These are updated by a scheduled workflow.
+  latest_monetization_url: "https://placeholder.link/monetization"
+  latest_reddit_post_url: "https://placeholder.link/reddit"
 
 markdown_extensions:
   - admonition
-  - attr_list
-  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
