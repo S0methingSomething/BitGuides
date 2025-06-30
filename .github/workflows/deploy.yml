@@ -35,7 +35,6 @@ jobs:
       - name: Set up a stable Python version
         uses: actions/setup-python@v5
         with:
-          # Pin to a specific, stable version to ensure dependency compatibility.
           python-version: '3.12'
 
       - name: Install uv
@@ -52,11 +51,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-uv-
 
-      - name: Install Python dependencies with uv
-        run: uv pip sync --system requirements.txt
-
-      - name: Build the MkDocs site
-        run: mkdocs build
+      - name: Install dependencies and Build Site
+        # This single, unified step ensures a consistent environment.
+        run: |
+          # Create a virtual environment.
+          uv venv
+          # Activate the virtual environment.
+          source .venv/bin/activate
+          # Install dependencies into the active venv.
+          uv pip sync requirements.txt
+          # Run the build command, which now uses the Python and packages
+          # from the activated venv, guaranteeing it finds its dependencies.
+          mkdocs build
 
       - name: Upload production-ready artifact
         uses: actions/upload-pages-artifact@v3
