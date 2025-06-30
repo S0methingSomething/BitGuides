@@ -1,3 +1,8 @@
+# Build and deployment dependencies
 mkdocs
 mkdocs-material
+mkdocs-link-checker-plugin
 pymdown-extensions
+
+# High-performance package installer used in workflows
+uv
