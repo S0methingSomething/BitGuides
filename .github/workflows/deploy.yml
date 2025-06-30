@@ -1,13 +1,9 @@
-# .github/workflows/deploy.yml
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
-    # Defines file paths that must change for the workflow to trigger.
-    # This prevents redeployment for changes unrelated to documentation.
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
@@ -33,12 +29,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python with uv and caching
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
-          # Caches uv's global directory to speed up subsequent installs.
-          cache: 'uv'
+
+      - name: Configure and cache uv dependencies
+        # This uses the official cache action for explicit control.
+        uses: actions/cache@v4
+        with:
+          # Defines the path to the directory that should be cached.
+          path: ~/.cache/uv
+          # The cache key is composed of the runner OS and a hash of the
+          # requirements file. The cache is only restored if the key is an
+          # exact match. If requirements.txt changes, a new cache is created.
+          key: ${{ runner.os }}-uv-${{ hashFiles('**/requirements.txt') }}
+          # A fallback key for partial cache restoration.
+          restore-keys: |
+            ${{ runner.os }}-uv-
 
       - name: Install Python dependencies with uv
         run: uv pip install -r requirements.txt
