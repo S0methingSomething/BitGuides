@@ -17,7 +17,7 @@ nav:
   - 'Modding':
     - 'MonetizationVars':
       - 'Requirements': 'modding/monetizationvars/requirements.md'
-      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlock-iap.md' # RENAMED
+      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlock-iap.md'
     - "APK's":
       - 'WARNING': 'modding/apks/warning.md'
       - 'Mod apk sources': 'modding/apks/sources.md'
@@ -47,13 +47,6 @@ theme:
 # -----------------------------------------------------------------------------
 plugins:
   - search
-  - link-checker:
-      allow_dead_links: false
-      # Specifies external links to be ignored by the link-checker plugin.
-      # These are managed by a scheduled workflow and may be temporarily invalid.
-      dont_check_these_links:
-        - https://placeholder.link/monetization
-        - https://placeholder.link/reddit
 
 # -----------------------------------------------------------------------------
 # Metadata & Extensions
