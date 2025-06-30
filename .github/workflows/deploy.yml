@@ -1,11 +1,9 @@
+# .github/workflows/deploy.yml
+
 name: Deploy to GitHub Pages
 
 on:
-  # Allows this workflow to be triggered manually from the GitHub Actions UI.
   workflow_dispatch:
-
-  # Triggers the workflow on pushes to the 'main' branch, but only for
-  # specific file paths to avoid unnecessary deployments.
   push:
     branches:
       - main
@@ -39,6 +37,15 @@ jobs:
         with:
           python-version: 3.x
 
+      - name: Install uv
+        # Installs the uv binary using the official, recommended script.
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Add uv to PATH
+        # The installer places uv in ~/.cargo/bin, which must be added to the
+        # GITHUB_PATH so it can be found in subsequent steps.
+        run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
       - name: Configure and cache uv dependencies
         uses: actions/cache@v4
         with:
@@ -48,7 +55,9 @@ jobs:
             ${{ runner.os }}-uv-
 
       - name: Install Python dependencies with uv
-        run: uv pip install -r requirements.txt
+        # Uses 'uv pip sync' which is the correct, idempotent command for CI.
+        # The --system flag modifies the globally available Python environment.
+        run: uv pip sync --system requirements.txt
 
       - name: Build the MkDocs site
         run: mkdocs build
