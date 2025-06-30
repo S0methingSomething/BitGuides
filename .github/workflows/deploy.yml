@@ -1,43 +1,56 @@
-name: Build and Deploy Site on Push
+# .github/workflows/deploy.yml
+
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
+    # Defines file paths that must change for the workflow to trigger.
+    # This prevents redeployment for changes unrelated to documentation.
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'requirements.txt'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Load site configuration
-        id: config
-        uses: antifree/json-to-variables@v1
+      - name: Set up Python with uv and caching
+        uses: actions/setup-python@v5
         with:
-          filename: 'site_config.json'
+          python-version: 3.x
+          # Caches uv's global directory to speed up subsequent installs.
+          cache: 'uv'
 
-      - name: Fetch and Prepare Dynamic Data
-        id: fetch_data
-        run: |
-          sudo apt-get update && sudo apt-get install -y jq
-          MONETIZATION_URL=$(curl -sL https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/tags/Latest | jq -r '.assets[] | select(.name=="${{ env.sources_monetization_asset_name }}") | .browser_download_url')
-          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_file_path }} | jq -r .activePostId)
-          echo "mon_url=${MONETIZATION_URL}" >> $GITHUB_OUTPUT
-          echo "reddit_id=${REDDIT_ID}" >> $GITHUB_OUTPUT
+      - name: Install Python dependencies with uv
+        run: uv pip install -r requirements.txt
 
-      - name: Update configuration file in-place
-        run: |
-          sed -i "s|latest_monetization_url:.*|latest_monetization_url: \"${{ steps.fetch_data.outputs.mon_url }}\"|g" mkdocs.yml
-          sed -i "s|latest_reddit_post_url:.*|latest_reddit_post_url: \"${{ env.links_reddit_base_url }}${{ steps.fetch_data.outputs.reddit_id }}/\"|g" mkdocs.yml
+      - name: Build the MkDocs site
+        run: mkdocs build
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Upload production-ready artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site'
 
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force --clean
+        id: deployment
+        uses: actions/deploy-pages@v4
