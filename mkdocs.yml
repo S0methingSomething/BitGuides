@@ -55,8 +55,8 @@ copyright: Copyright © 2025 S0methingSomething | Licensed under the Apache Lice
 
 extra:
   # Custom variables accessible in templates. These are updated by a scheduled workflow.
-  latest_monetization_url: "https://placeholder.link/monetization"
-  latest_reddit_post_url: "https://placeholder.link/reddit"
+  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/download/Latest/MonetizationVars"
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeApp/comments/1lmpyyu/"
 
 markdown_extensions:
   - admonition
