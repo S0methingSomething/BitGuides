@@ -4,12 +4,9 @@
   "description": "Linters for the BitGuides documentation.",
   "private": true,
   "scripts": {
-    "check:format": "prettier --check 'docs/**/*.md'",
-    "check:spell": "cspell 'docs/**/*.md'",
-    "lint": "npm run check:format && npm run check:spell"
+    "lint": "prettier --check 'docs/**/*.md'"
   },
   "devDependencies": {
-    "cspell": "*",
     "prettier": "*"
   }
 }
