@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/</loc>
+         <lastmod>2025-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/mod/faq/</loc>
+         <lastmod>2025-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/mod/replacing-monetizationvars/</loc>
+         <lastmod>2025-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/setup/requirements/</loc>
+         <lastmod>2025-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/setup/zarchiver/</loc>
+         <lastmod>2025-07-02</lastmod>
+    </url>
 </urlset>
