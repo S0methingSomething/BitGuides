@@ -11,9 +11,5 @@
     "textlint",
     "vale"
   ],
-  "ignorePaths": [
-    ".github/**",
-    "site/**",
-    "*.pyc"
-  ]
+  "ignorePaths": [".github/**", "site/**", "*.pyc"]
 }

@@ -1,18 +1,25 @@
 # Welcome to BitGuides!
 
-!!! info "Works on Android 15+ and All Modern Versions"
-    This method works perfectly on all modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the protected `Android/data` folder without rooting your device.
+!!! info "Works on Android 15+ and All Modern Versions" This method works
+perfectly on all modern Android versions, including the latest **Android 15+**.
+It uses Shizuku, which is currently the **most stable and reliable method** for
+accessing the protected `Android/data` folder without rooting your device.
 
 ---
 
 ## Requirements
 
-You need four things to get started. The main download link for the mod file is always updated here, but you can also find it in the community Reddit post.
+You need four things to get started. The main download link for the mod file is
+always updated here, but you can also find it in the community Reddit post.
 
-*   **Shizuku**: [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
-*   **ZArchiver**: [Download from Google Play](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
-*   **BitLife**: [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
-*   **MonetizationVars File**: **[Download Latest Version]({{ extra.latest_monetization_url }})**
+- **Shizuku**:
+  [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+- **ZArchiver**:
+  [Download from Google Play](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
+- **BitLife**:
+  [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
+- **MonetizationVars File**: **[Download Latest
+  Version]({{ extra.latest_monetization_url }})**
 
 ---
 
@@ -20,9 +27,12 @@ You need four things to get started. The main download link for the mod file is 
 
 ### Step 1: Activate Shizuku
 
-You must start Shizuku using the **Wireless Debugging** method. This is the most important step.
+You must start Shizuku using the **Wireless Debugging** method. This is the most
+important step.
 
-*   Go to the official guide and follow the section **"Start via Wireless Debugging"**: **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
+- Go to the official guide and follow the section **"Start via Wireless
+  Debugging"**:
+  **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
 
 ### Step 2: Configure ZArchiver
 
@@ -47,7 +57,8 @@ You must start Shizuku using the **Wireless Debugging** method. This is the most
 ### Step 3: Apply the Mod
 
 1.  Navigate to your **Download** folder.
-    > The file must be named **exactly** `MonetizationVars` with no extra extension.
+    > The file must be named **exactly** `MonetizationVars` with no extra
+    > extension.
 2.  Long-press the `MonetizationVars` file and click **Copy**.
     > ![Holding the file and clicking Copy](./assets/mod-copy-file.png)
 3.  Go to the ZArchiver home screen and navigate to `Android/data/`.
@@ -75,8 +86,9 @@ You must start Shizuku using the **Wireless Debugging** method. This is the most
 
 ## Advanced Customization with BitEdit
 
-!!! tip "For Power Users: Create a Custom Mod"
-    If you want more control and wish to enable or disable specific things yourself on MonetizationVars, you can use my other project, **BitEdit**.
+!!! tip "For Power Users: Create a Custom Mod" If you want more control and wish
+to enable or disable specific things yourself on MonetizationVars, you can use
+my other project, **BitEdit**.
 
     BitEdit is a web tool that lets you edit the `MonetizationVars` file using a simple, human-readable interface. You don't need to understand complex JSON code.
 
@@ -90,13 +102,19 @@ You must start Shizuku using the **Wireless Debugging** method. This is the most
 
 ## Final Notes & Community
 
-*   **Community Support on r/BitLifeRebels**
-    > For questions and help, a great place to go is the `r/BitLifeRebels` subreddit. My bot, **BitBot**, automatically posts the newest `MonetizationVars` file there as soon as it's released.
-    > **[Go to the Latest BitBot Post]({{ extra.latest_reddit_post_url }})**
+- **Community Support on r/BitLifeRebels**
 
-*   **The mod is PERMANENT.** You only need to do this once.
+  > For questions and help, a great place to go is the `r/BitLifeRebels`
+  > subreddit. My bot, **BitBot**, automatically posts the newest
+  > `MonetizationVars` file there as soon as it's released. **[Go to the Latest
+  > > BitBot Post]({{ extra.latest_reddit_post_url }})**
 
-*   **Shizuku is NOT permanent.**
-    > **WARNING:** You must restart Shizuku using Wireless Debugging every time you reboot your phone. You only need to do this if you plan on browsing `Android/data`, not for the mod to work.
+- **The mod is PERMANENT.** You only need to do this once.
 
-Once finished, force close BitLife and open it again. Everything will be unlocked.
+- **Shizuku is NOT permanent.**
+  > **WARNING:** You must restart Shizuku using Wireless Debugging every time
+  > you reboot your phone. You only need to do this if you plan on browsing
+  > `Android/data`, not for the mod to work.
+
+Once finished, force close BitLife and open it again. Everything will be
+unlocked.

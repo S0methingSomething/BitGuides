@@ -37,17 +37,17 @@ extra:
   latest_reddit_post_url: "YOUR_FALLBACK_REDDIT_URL"
 
 nav:
-  - 'Home': 'index.md'
-  - 'Gameplay':
-    - 'Tips': 'gameplay/tips.md'
-    - 'How to': 'gameplay/how-to.md'
-  - 'Modding':
-    - 'MonetizationVars':
-      - 'Requirements': 'modding/monetizationvars/requirements.md'
-      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlocking-iap.md'
-    - "APK's":
-      - 'WARNING': 'modding/apks/warning.md'
-      - 'Mod apk sources': 'modding/apks/sources.md'
+  - "Home": "index.md"
+  - "Gameplay":
+      - "Tips": "gameplay/tips.md"
+      - "How to": "gameplay/how-to.md"
+  - "Modding":
+      - "MonetizationVars":
+          - "Requirements": "modding/monetizationvars/requirements.md"
+          - "Unlocking IAP with MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
+      - "APK's":
+          - "WARNING": "modding/apks/warning.md"
+          - "Mod apk sources": "modding/apks/sources.md"
 
 markdown_extensions:
   - admonition
