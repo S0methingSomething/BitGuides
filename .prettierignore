@@ -1,0 +1,4 @@
+# Ignore patterns are based on .gitignore syntax
+/.github/
+/site/
+*.pyc
