@@ -1,0 +1,13 @@
+# Node.js
+/node_modules
+/package-lock.json
+
+# Python
+/site/
+__pycache__/
+*.pyc
+.venv/
+
+# IDEs
+.vscode/
+.idea/
