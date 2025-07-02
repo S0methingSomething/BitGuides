@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "BitLife",
+    "BitGuides",
+    "Bitizen",
+    "MonetizationVars",
+    "mkdocs",
+    "pymdownx",
+    "textlint",
+    "vale"
+  ],
+  "ignorePaths": [
+    ".github/**",
+    "site/**",
+    "*.pyc"
+  ]
+}
