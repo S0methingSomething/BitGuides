@@ -4,21 +4,19 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'docs/**'
-      - '.github/workflows/**'
+      - 'docs/**/*.md'         # Only run on Markdown file changes
+      - '.github/workflows/ci.yml'
       - '.vale.ini'
-      - 'mkdocs.yml'
-      - 'pyproject.toml'
       - 'package.json'
+      - 'pyproject.toml'
   push:
     branches: [ main ]
     paths:
-      - 'docs/**'
-      - '.github/workflows/**'
+      - 'docs/**/*.md'         # Only run on Markdown file changes
+      - '.github/workflows/ci.yml'
       - '.vale.ini'
-      - 'mkdocs.yml'
-      - 'pyproject.toml'
       - 'package.json'
+      - 'pyproject.toml'
   workflow_dispatch:
 
 jobs:
@@ -40,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install Prettier
         run: npm install
