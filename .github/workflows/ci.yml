@@ -19,6 +19,7 @@ on:
       - 'mkdocs.yml'
       - 'pyproject.toml'
       - 'package.json'
+  workflow_dispatch:
 
 jobs:
   lint-and-validate:
