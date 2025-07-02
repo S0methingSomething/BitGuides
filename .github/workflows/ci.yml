@@ -1,0 +1,50 @@
+name: Lint and Validate
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/**'
+      - '.vale.ini'
+      - 'mkdocs.yml'
+      - 'pyproject.toml'
+      - 'package.json'
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/**'
+      - '.vale.ini'
+      - 'mkdocs.yml'
+      - 'pyproject.toml'
+      - 'package.json'
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup uv (Python Environment)
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install latest Python dependencies
+        run: uv pip install -r pyproject.toml --system
+
+      - name: Setup Node.js with dependency caching
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install latest Node.js linters
+        run: npm install
+
+      - name: Run all Node.js linters
+        run: npm run lint
+
+      - name: Setup and run Vale prose linter
+        uses: errata-ai/vale-action@v2
+        with:
+          files: 'docs'
