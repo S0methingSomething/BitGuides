@@ -26,11 +26,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup uv (Python Environment)
+      - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.13'
 
-      - name: Install latest Python dependencies
-        run: uv pip install -r pyproject.toml --system
+      - name: Create venv and install Python dependencies
+        run: |
+          uv venv
+          uv pip install -r pyproject.toml
 
       - name: Setup Node.js with dependency caching
         uses: actions/setup-node@v4
