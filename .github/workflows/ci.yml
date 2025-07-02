@@ -36,11 +36,11 @@ jobs:
           uv venv
           uv pip install -r pyproject.toml
 
-      - name: Setup Node.js with dependency caching
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          # REMOVED: cache: 'npm' - This requires a lockfile, which we don't have.
 
       - name: Install latest Node.js linters
         run: npm install
