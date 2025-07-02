@@ -1,74 +1,29 @@
-# .github/workflows/deploy.yml
-
 name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - 'requirements.txt'
+    branches: [ main ]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: "pages"
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up a stable Python version
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
         with:
-          python-version: '3.12'
+          fetch-depth: 0
 
-      - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Setup uv (Python Environment)
+        uses: astral-sh/setup-uv@v6
 
-      - name: Add uv to PATH
-        run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      - name: Install latest Python dependencies
+        run: uv pip install -r pyproject.toml --system
 
-      - name: Configure and cache uv dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/uv
-          key: ${{ runner.os }}-uv-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-uv-
-
-      - name: Install dependencies and Build Site
-        # This single, unified step ensures a consistent environment.
-        run: |
-          # Create a virtual environment.
-          uv venv
-          # Activate the virtual environment.
-          source .venv/bin/activate
-          # Install dependencies into the active venv.
-          uv pip sync requirements.txt
-          # Run the build command, which now uses the Python and packages
-          # from the activated venv, guaranteeing it finds its dependencies.
-          mkdocs build
-
-      - name: Upload production-ready artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './site'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build and deploy site with MkDocs
+        run: mkdocs gh-deploy --force
