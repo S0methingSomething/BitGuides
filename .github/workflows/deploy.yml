@@ -19,11 +19,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup uv (Python Environment)
+      - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.13'
 
-      - name: Install latest Python dependencies
-        run: uv pip install -r pyproject.toml --system
+      - name: Create venv and install Python dependencies
+        run: |
+          uv venv
+          uv pip install -r pyproject.toml
 
-      - name: Build and deploy site with MkDocs
-        run: mkdocs gh-deploy --force
+      - name: Build and deploy site with uv
+        run: uv run mkdocs gh-deploy --force
