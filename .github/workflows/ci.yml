@@ -1,5 +1,4 @@
 name: Lint and Validate
-
 on:
   pull_request:
     branches: [ main ]
@@ -20,34 +19,27 @@ on:
       - 'pyproject.toml'
       - 'package.json'
   workflow_dispatch:
-
 jobs:
   lint-and-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.13'
-
       - name: Create venv and install Python dependencies
         run: |
           uv venv
           uv pip install -r pyproject.toml
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Install latest Node.js linters
+      - name: Install Prettier
         run: npm install
-
-      - name: Run Prettier and CSpell
+      - name: Run Prettier format check
         run: npm run lint
-
       - name: Setup and run Vale prose linter
         uses: errata-ai/vale-action@v2
         with:
