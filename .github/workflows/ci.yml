@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'docs/**/*.md'         # Only run on Markdown file changes
+      - 'docs/**/*.md'
       - '.github/workflows/ci.yml'
       - '.vale.ini'
       - 'package.json'
@@ -12,7 +12,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'docs/**/*.md'         # Only run on Markdown file changes
+      - 'docs/**/*.md'
       - '.github/workflows/ci.yml'
       - '.vale.ini'
       - 'package.json'
@@ -38,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
       - name: Install Prettier
         run: npm install
@@ -49,4 +49,7 @@ jobs:
       - name: Setup and run Vale prose linter
         uses: errata-ai/vale-action@v2
         with:
+          # Point to the root .vale.ini file
+          config: .vale.ini
+          # Scan the docs folder
           files: 'docs'
