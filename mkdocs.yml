@@ -1,14 +1,41 @@
-# -----------------------------------------------------------------------------
-# Project Configuration
-# -----------------------------------------------------------------------------
 site_name: BitGuides
-site_author: S0methingSomething
-site_description: Guides for modding BitLife.
+site_url: https://S0methingSomething.github.io/BitGuides/
 repo_url: https://github.com/S0methingSomething/BitGuides
+repo_name: S0methingSomething/BitGuides
+edit_uri: edit/main/docs/
 
-# -----------------------------------------------------------------------------
-# Navigation Structure
-# -----------------------------------------------------------------------------
+theme:
+  name: material
+  language: en
+  features:
+    - header.autohide
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra:
+  latest_monetization_url: "YOUR_FALLBACK_MONETIZATION_URL"
+  latest_reddit_post_url: "YOUR_FALLBACK_REDDIT_URL"
+
 nav:
   - 'Home': 'index.md'
   - 'Gameplay':
@@ -17,50 +44,19 @@ nav:
   - 'Modding':
     - 'MonetizationVars':
       - 'Requirements': 'modding/monetizationvars/requirements.md'
-      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlock-iap.md'
+      - 'Unlocking IAP with MonetizationVars': 'modding/monetizationvars/unlocking-iap.md'
     - "APK's":
       - 'WARNING': 'modding/apks/warning.md'
       - 'Mod apk sources': 'modding/apks/sources.md'
 
-# -----------------------------------------------------------------------------
-# Theme Configuration
-# -----------------------------------------------------------------------------
-theme:
-  name: material
-  favicon: assets/favicon.png
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
-  features:
-    - navigation.indexes
-    - navigation.top
-    - content.code.copy
-
-# -----------------------------------------------------------------------------
-# Plugins Configuration
-# -----------------------------------------------------------------------------
-plugins:
-  - search
-
-# -----------------------------------------------------------------------------
-# Metadata & Extensions
-# -----------------------------------------------------------------------------
-copyright: Copyright © 2025 S0methingSomething | Licensed under the Apache License 2.0
-
-extra:
-  # Custom variables accessible in templates. These are updated by a scheduled workflow.
-  latest_monetization_url: "https://github.com/S0methingSomething/BitEdit/releases/download/Latest/MonetizationVars"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeApp/comments/1lmpyyu/"
-
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.superfences
+  - pymdownx.snippets  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
