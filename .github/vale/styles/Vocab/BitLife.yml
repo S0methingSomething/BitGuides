@@ -1,8 +1,0 @@
-extends: substitution
-message: "Use '%s' instead of '%s'"
-level: error
-ignorecase: true
-swap:
-  Bitizen: Bitizen|BitIzen
-  God Mode: GodMode|Godmode
-  MonetizationVars: MonetizationVars
