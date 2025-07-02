@@ -1,7 +1,7 @@
 {
   "name": "bitguides-docs",
   "version": "1.0.0",
-  "description": "Linters for the BitGuides documentation.",
+  "description": "BitGuides documentation.",
   "private": true,
   "scripts": {
     "check:format": "prettier --check 'docs/**/*.md'",
@@ -10,7 +10,6 @@
     "lint": "npm run check:format && npm run check:spell && npm run check:prose"
   },
   "devDependencies": {
-    "@textlint/cli": "*",
     "cspell": "*",
     "prettier": "*",
     "textlint": "*",
