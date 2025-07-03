@@ -4,6 +4,9 @@ repo_url: https://github.com/S0methingSomething/BitGuides
 repo_name: S0methingSomething/BitGuides
 edit_uri: edit/main/docs/
 
+plugins:
+  - macros
+
 theme:
   name: material
   language: en
@@ -33,19 +36,19 @@ theme:
         name: Switch to light mode
 
 extra:
-  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases/download/v3.19.3/MonetizationVars"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/comments/1lmpyyu/"
+  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases"
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
 
 nav:
-  - "Home": "index.md"
-  - "Gameplay":
-      - "Tips": "gameplay/tips.md"
-      - "How to": "gameplay/how-to.md"
-  - "Modding":
-      - "MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
-      - "APK's":
-          - "WARNING": "modding/apks/warning.md"
-          - "Mod apk sources": "modding/apks/sources.md"
+  - 'Home': 'index.md'
+  - 'Gameplay':
+    - 'Tips': 'gameplay/tips.md'
+    - 'How to': 'gameplay/how-to.md'
+  - 'Modding':
+    - 'MonetizationVars': 'modding/monetizationvars/unlocking-iap.md'
+    - "APK's":
+      - 'WARNING': 'modding/apks/warning.md'
+      - 'Mod apk sources': 'modding/apks/sources.md'
 
 markdown_extensions:
   - admonition
