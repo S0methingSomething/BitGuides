@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -27,7 +28,7 @@ jobs:
       - name: Create venv and install Python dependencies
         run: |
           uv venv
-          uv pip install -r requirements.txt
+          uv pip install -r pyproject.toml
 
       - name: Build and deploy site with uv
         run: uv run mkdocs gh-deploy --force
