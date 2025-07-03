@@ -33,8 +33,11 @@ theme:
         name: Switch to light mode
 
 extra:
-  latest_monetization_url: "YOUR_FALLBACK_MONETIZATION_URL"
-  latest_reddit_post_url: "YOUR_FALLBACK_REDDIT_URL"
+  # If the automation fails, this link goes to the main releases page.
+  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases"
+  
+  # If the automation fails, this link goes to the main subreddit page.
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
 
 nav:
   - "Home": "index.md"
