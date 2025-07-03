@@ -20,7 +20,7 @@ always updated here, but you can also find it in the community Reddit post.
 - **BitLife**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
 - **MonetizationVars File**: **[Download Latest
-  Version]({{ config.extra.latest_monetization_url }})**
+  Version]({{ extra.latest_monetization_url }})**
 
 ---
 
@@ -107,7 +107,7 @@ important step.
   > `MonetizationVars` file there as soon as it's released. \*\*[Go to the
   > Latest
   >
-  > BitBot Post]({{ config.extra.latest_reddit_post_url }})\*\*
+  > BitBot Post]({{ extra.latest_reddit_post_url }})\*\*
 
 - **The mod is PERMANENT.** You only need to do this once.
 
