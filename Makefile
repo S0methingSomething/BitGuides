@@ -1,10 +1,10 @@
-# Define the expected path for the uv binary
-UV_BIN := $(HOME)/.cargo/bin/uv
+## Define the expected path for the uv binary based on its install script
+UV_BIN := $(HOME)/.local/bin/uv
 
 .PHONY: setup lint clean
 
 # Sets up the complete development environment.
-# It automatically installs 'uv' if it's not found.
+# This is the only command a new contributor needs to run.
 setup:
 	@# Step 1: Bootstrap uv if it's missing
 	@if [ ! -f "$(UV_BIN)" ]; then \
