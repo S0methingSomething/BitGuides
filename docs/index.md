@@ -19,33 +19,25 @@ always updated here, but you can also find it in the community Reddit post.
   [Download from Google Play](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
 - **BitLife**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
-- **MonetizationVars File**: **[Download Latest
-  Version]({{ extra.latest_monetization_url }})**
+- **MonetizationVars File**: **[Download Latest Version](l_monetizationvars)**
+
+---
+...
 
 ---
 
-## Setup & Installation
+## Final Notes & Community
 
-### Step 1: Activate Shizuku
+- **Community Support on r/BitLifeRebels**
 
-You must start Shizuku using the **Wireless Debugging** method. This is the most
-important step.
+  > For questions and help, a great place to go is the `r/BitLifeRebels`
+  > subreddit. My bot, **BitBot**, automatically posts the newest
+  > `MonetizationVars` file there as soon as it's released. **[Go to the
+  > Latest
+  >
+  > BitBot Post](lreddit_post)**
 
-- Go to the official guide and follow the section **"Start via Wireless
-  Debugging"**:
-  **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
-
-### Step 2: Configure ZArchiver
-
-1.  Open ZArchiver.
-2.  Click the three dots on the top right.
-    > ![ZArchiver main menu with three dots highlighted](./assets/zarchiver-menu.png)
-3.  Click **Settings**.
-    > ![ZArchiver settings option](./assets/zarchiver-settings.png)
-4.  Click **ROOT**.
-    > ![ROOT option in settings](./assets/zarchiver-root-settings.png)
-5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
-    > **WARNING**: Shizuku must be running already for this to work.
+...    > **WARNING**: Shizuku must be running already for this to work.
     > ![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png)
 6.  Enable the option **Use for Android/data and Android/obb**.
     > ![Enable 'Use for data' option](./assets/zarchiver-enable-data-access.png)
