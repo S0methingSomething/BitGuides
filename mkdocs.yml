@@ -33,8 +33,8 @@ theme:
         name: Switch to light mode
 
 extra:
-  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
+  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases/download/v3.19.3/MonetizationVars"
+  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/comments/1lmpyyu/"
 
 nav:
   - "Home": "index.md"
