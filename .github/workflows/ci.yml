@@ -1,4 +1,5 @@
 name: Lint and Validate
+
 on:
   pull_request:
     branches: [ main ]
@@ -17,30 +18,43 @@ on:
       - 'package.json'
       - 'pyproject.toml'
   workflow_dispatch:
+
 jobs:
   lint-and-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.13'
+
       - name: Create venv and install Python dependencies
         run: |
           uv venv
           uv pip install -r pyproject.toml
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
       - name: Install Prettier
         run: npm install
+
       - name: Run Prettier format check
         run: npm run lint
-      - name: Setup and run Vale prose linter
-        uses: errata-ai/vale-action@v2
-        with:
-          files: 'docs'
-          # This is the key change: Fail the build on actual errors.
-          fail_on_error: true
+
+      - name: Install and Setup Vale
+        run: |
+          LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
+          curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
+          vale --version
+          
+      - name: Sync Vale Styles
+        run: vale sync
+
+      - name: Run Vale Lint
+        # This will now correctly fail the job if any ERROR-level rule is found.
+        run: vale --minAlertLevel error docs
