@@ -33,7 +33,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
       - name: Install Prettier
         run: npm install
       - name: Run Prettier format check
@@ -42,5 +42,5 @@ jobs:
         uses: errata-ai/vale-action@v2
         with:
           files: 'docs'
+          # This is the key change: Fail the build on actual errors.
           fail_on_error: true
-          level: ERROR
