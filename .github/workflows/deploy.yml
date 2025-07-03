@@ -27,7 +27,7 @@ jobs:
       - name: Create venv and install Python dependencies
         run: |
           uv venv
-          uv pip install -r pyproject.toml
+          uv pip install -r requirements.txt
 
       - name: Build and deploy site with uv
         run: uv run mkdocs gh-deploy --force
