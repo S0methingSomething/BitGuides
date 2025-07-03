@@ -33,10 +33,7 @@ theme:
         name: Switch to light mode
 
 extra:
-  # If the automation fails, this link goes to the main releases page.
   latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases"
-
-  # If the automation fails, this link goes to the main subreddit page.
   latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
 
 nav:
@@ -45,9 +42,7 @@ nav:
       - "Tips": "gameplay/tips.md"
       - "How to": "gameplay/how-to.md"
   - "Modding":
-      - "MonetizationVars":
-          - "Requirements": "modding/monetizationvars/requirements.md"
-          - "Unlocking IAP with MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
+      - "MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
       - "APK's":
           - "WARNING": "modding/apks/warning.md"
           - "Mod apk sources": "modding/apks/sources.md"
