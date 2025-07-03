@@ -30,5 +30,21 @@ jobs:
           uv venv
           uv pip install -r pyproject.toml
 
+      - name: Load dynamic link configuration
+        uses: antifree/json-to-variables@v1
+        with:
+          filename: 'site_config.json'
+
+      - name: Fetch dynamic links and replace placeholders
+        run: |
+          MON_URL=$(curl -sL https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/latest | jq -r '.assets[] | select(.name=="${{ env.sources_monetization_asset_name }}") | .browser_download_url')
+          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_file_path }} | jq -r .activePostId)
+          REDDIT_URL="${{ env.links_reddit_base_url }}${REDDIT_ID}/"
+
+          find docs -type f -name "*.md" -exec sed -i "s|l_monetizationvars|${MON_URL}|g" {} +
+          find docs -type f -name "*.md" -exec sed -i "s|lreddit_post|${REDDIT_URL}|g" {} +
+
+          echo "Placeholders replaced."
+
       - name: Build and deploy site with uv
         run: uv run mkdocs gh-deploy --force
