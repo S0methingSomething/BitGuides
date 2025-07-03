@@ -10,13 +10,24 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
     -   id: prettier
-        # This will auto-format your markdown files
         types_or: [yaml, markdown]
 
 -   repo: https://github.com/errata-ai/vale
     rev: v3.12.0
     hooks:
     -   id: vale
-        # This will lint your markdown files using your .vale.ini config
-        args: [--config=.vale.ini]
+        # This hook runs on every commit.
+        args: [--minAlertLevel=error, --config=.vale.ini]
         files: \.md$
+
+-   repo: local
+    hooks:
+    -   id: vale-sync
+        name: vale-sync
+        # This is a one-time setup hook, run via `make install`.
+        # It downloads the Vale styles into .github/vale/styles
+        # so the hook above can find them.
+        entry: vale sync
+        language: system
+        pass_filenames: false
+        stages: [manual]
