@@ -1,9 +1,10 @@
 # Welcome to BitGuides!
 
-!!! info "Works on Android 15+ and All Modern Versions" This method works
-perfectly on all modern Android versions, including the latest **Android 15+**.
-It uses Shizuku, which is currently the **most stable and reliable method** for
-accessing the protected `Android/data` folder without rooting your device.
+<!-- prettier-ignore-start -->
+!!! info "Works on Android 15+ and All Modern Versions"
+
+    This method works perfectly on all modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the protected `Android/data` folder without rooting your device.
+<!-- prettier-ignore-end -->
 
 ---
 
@@ -19,7 +20,7 @@ always updated here, but you can also find it in the community Reddit post.
 - **BitLife**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
 - **MonetizationVars File**: **[Download Latest
-  Version]({{ extra.latest_monetization_url }})**
+  Version]({{ config.extra.latest_monetization_url }})**
 
 ---
 
@@ -86,9 +87,10 @@ important step.
 
 ## Advanced Customization with BitEdit
 
-!!! tip "For Power Users: Create a Custom Mod" If you want more control and wish
-to enable or disable specific things yourself on MonetizationVars, you can use
-my other project, **BitEdit**.
+<!-- prettier-ignore-start -->
+!!! tip "For Power Users: Create a Custom Mod"
+
+    If you want more control and wish to enable or disable specific things yourself on MonetizationVars, you can use my other project, **BitEdit**.
 
     BitEdit is a web tool that lets you edit the `MonetizationVars` file using a simple, human-readable interface. You don't need to understand complex JSON code.
 
@@ -97,6 +99,7 @@ my other project, **BitEdit**.
     2.  Make your desired changes to MonetizationVars.
     3.  Download your new, `MonetizationVars` file from the tool.
     4.  Follow **Step 3** and **Step 4** of this guide using your newly created file.
+<!-- prettier-ignore-end -->
 
 ---
 
@@ -106,10 +109,10 @@ my other project, **BitEdit**.
 
   > For questions and help, a great place to go is the `r/BitLifeRebels`
   > subreddit. My bot, **BitBot**, automatically posts the newest
-  > `MonetizationVars` file there as soon as it's released. \*\*[Go to the
+  > `MonetizationVars` file there as soon as it's released. **[Go to the
   > Latest
   >
-  > > BitBot Post]({{ extra.latest_reddit_post_url }})\*\*
+  > BitBot Post]({{ config.extra.latest_reddit_post_url }})**
 
 - **The mod is PERMANENT.** You only need to do this once.
 
