@@ -35,7 +35,7 @@ theme:
 extra:
   # If the automation fails, this link goes to the main releases page.
   latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases"
-  
+
   # If the automation fails, this link goes to the main subreddit page.
   latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/"
 
