@@ -109,10 +109,10 @@ important step.
 
   > For questions and help, a great place to go is the `r/BitLifeRebels`
   > subreddit. My bot, **BitBot**, automatically posts the newest
-  > `MonetizationVars` file there as soon as it's released. **[Go to the
+  > `MonetizationVars` file there as soon as it's released. \*\*[Go to the
   > Latest
   >
-  > BitBot Post]({{ config.extra.latest_reddit_post_url }})**
+  > BitBot Post]({{ config.extra.latest_reddit_post_url }})\*\*
 
 - **The mod is PERMANENT.** You only need to do this once.
 
