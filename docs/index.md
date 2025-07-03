@@ -22,6 +22,7 @@ always updated here, but you can also find it in the community Reddit post.
 - **MonetizationVars File**: **[Download Latest Version](l_monetizationvars)**
 
 ---
+
 ...
 
 ---
@@ -32,15 +33,15 @@ always updated here, but you can also find it in the community Reddit post.
 
   > For questions and help, a great place to go is the `r/BitLifeRebels`
   > subreddit. My bot, **BitBot**, automatically posts the newest
-  > `MonetizationVars` file there as soon as it's released. **[Go to the
+  > `MonetizationVars` file there as soon as it's released. \*\*[Go to the
   > Latest
   >
-  > BitBot Post](lreddit_post)**
+  > BitBot Post](lreddit_post)\*\*
 
-...    > **WARNING**: Shizuku must be running already for this to work.
-    > ![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png)
-6.  Enable the option **Use for Android/data and Android/obb**.
-    > ![Enable 'Use for data' option](./assets/zarchiver-enable-data-access.png)
+... > **WARNING**: Shizuku must be running already for this to work. >
+![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png) 6.
+Enable the option **Use for Android/data and Android/obb**. >
+![Enable 'Use for data' option](./assets/zarchiver-enable-data-access.png)
 
 ### Step 3: Apply the Mod
 
