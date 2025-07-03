@@ -4,9 +4,6 @@ repo_url: https://github.com/S0methingSomething/BitGuides
 repo_name: S0methingSomething/BitGuides
 edit_uri: edit/main/docs/
 
-plugins:
-  - macros
-
 theme:
   name: material
   language: en
@@ -34,10 +31,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-
-extra:
-  latest_monetization_url: "https://github.com/S0methingSomething/BitBot/releases/download/v3.19.3/MonetizationVars"
-  latest_reddit_post_url: "https://www.reddit.com/r/BitLifeRebels/comments/1lmpyyu/"
 
 nav:
   - 'Home': 'index.md'
