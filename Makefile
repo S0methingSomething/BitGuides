@@ -1,43 +1,39 @@
-# Define the expected path for the uv binary based on its install script
-UV_BIN := $(HOME)/.local/bin/uv
-
 .PHONY: setup lint clean
 
-# Sets up the complete development environment.
 # This is the only command a new contributor needs to run.
 setup:
-	@# Step 1: Bootstrap uv if it's missing
-	@if [ ! -f "$(UV_BIN)" ]; then \
-		echo "--- uv not found. Installing it now... ---"; \
+	@echo "--- Installing bootstrap tools (uv, vale)... ---"
+	@if ! command -v uv &> /dev/null; then \
+		echo "uv not found, installing..."; \
 		curl -LsSf https://astral.sh/uv/install.sh | sh; \
 	else \
-		echo "--- uv is already installed. ---"; \
+		echo "uv already installed."; \
+	fi
+	@if ! command -v vale &> /dev/null; then \
+		echo "vale not found, installing..."; \
+		LATEST_VALE_URL=$$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url'); \
+		curl -sL $$LATEST_VALE_URL | sudo tar xz -C /usr/local/bin vale; \
+	else \
+		echo "vale already installed."; \
 	fi
 
-	@# Step 2: Create the virtual environment AND install dependencies
-	@echo "\n--- Creating venv and installing Python dependencies... ---"
-	$(UV_BIN) venv
-	$(UV_BIN) pip install -r pyproject.toml
-
-	@# Step 3: Install Node.js dependencies
-	@echo "\n--- Installing Node.js dependencies... ---"
+	@echo "\n--- Installing Python & Node.js dependencies... ---"
+	uv pip install -r pyproject.toml
 	npm install
 
-	@# Step 4: Install git hooks with pre-commit (run via uv to use the venv)
 	@echo "\n--- Installing git hooks with pre-commit... ---"
-	$(UV_BIN) run pre-commit install
+	uv run pre-commit install
 
-	@# Step 5: Sync Vale styles for local use (run via uv to use the venv)
-	@echo "\n--- Syncing Vale styles for local use... ---"
-	$(UV_BIN) run pre-commit run vale-sync --hook-stage manual
+	@echo "\n--- Downloading Vale styles for local checks... ---"
+	vale sync
 
-	@echo "\n✅ Environment is ready. Automatic checks will now run on 'git commit'."
+	@echo "\n✅ Environment is ready. Linters will now run automatically on 'git commit'."
 
-# A helper command to manually run all checks against all files.
+# Manually run all linters against all files in the repository.
 lint:
 	uv run pre-commit run --all-files
 
-# A helper command to clean up all generated files and caches.
+# Clean up all generated files and caches.
 clean:
 	@echo "--- Cleaning up project... ---"
 	rm -rf .venv node_modules site __pycache__ .DS_Store

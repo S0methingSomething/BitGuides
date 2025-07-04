@@ -51,7 +51,7 @@ jobs:
           LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
           curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
           vale --version
-          
+
       - name: Sync Vale Styles
         run: vale sync
 
