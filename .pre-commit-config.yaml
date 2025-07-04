@@ -16,7 +16,7 @@ repos:
     hooks:
     -   id: vale
         name: vale
-        # This is the key: use the system-installed Vale.
         language: system
         entry: vale --minAlertLevel=error --config=.vale.ini
-        files: \.md$
+        # This is the key: it now ONLY looks inside the docs/ folder.
+        files: ^docs/.*\.md$
