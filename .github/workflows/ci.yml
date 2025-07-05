@@ -34,19 +34,16 @@ jobs:
         run: npm install
 
       - name: Run Prettier format check
-        # This explicitly checks only the documentation files.
         run: npx prettier --check 'docs/**/*.md'
 
       - name: Install and Setup Vale
-        # This installs Vale globally in the CI runner.
         run: |
           LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
           curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
       
       - name: Sync Vale Styles for CI
-        # This downloads the styles (Google, Microsoft, etc.) for Vale to use.
         run: vale sync
 
       - name: Run Vale Lint on Documentation
-        # This is the key: it runs Vale ONLY on your 'docs' folder, ignoring everything else.
-        run: vale --minAlertLevel error docs
+        # This is the definitive fix: Use a glob pattern to ONLY lint Markdown files.
+        run: vale --minAlertLevel error "docs/**/*.md"
