@@ -30,7 +30,7 @@ jobs:
         run: |
           LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
           curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
-      
+
       - name: Sync Vale Styles for CI
         # This mirrors the 'make setup' command to download styles.
         run: vale sync
