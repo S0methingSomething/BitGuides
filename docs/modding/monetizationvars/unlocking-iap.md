@@ -46,11 +46,10 @@ important step.
 5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
 
     <!-- prettier-ignore-start -->
-
-    !!! warning Shizuku must be running already for this to work.
+    !!! warning
+        Shizuku must be running already for this to work.
 
         ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
-
     <!-- prettier-ignore-end -->
 
 6.  Enable the option **Use for Android/data and Android/obb**.
@@ -61,9 +60,9 @@ important step.
 1.  Navigate to your **Download** folder.
 
     <!-- prettier-ignore-start -->
-
-    !!! note The file must be named **exactly** `MonetizationVars` with no extra
-    extension.
+    !!! note
+        The file must be named **exactly** `MonetizationVars` with no extra
+        extension.
     <!-- prettier-ignore-end -->
 
 2.  Long-press the `MonetizationVars` file and click **Copy**.
@@ -113,11 +112,11 @@ important step.
 - **Community Support on r/BitLifeRebels**
 
     <!-- prettier-ignore-start -->
-
-  !!! quote For questions and help, a great place to go is the `r/BitLifeRebels`
-  subreddit. My bot, **BitBot**, automatically posts the newest
-  `MonetizationVars` file there as soon as it's released.
-  **[Go to the Latest BitBot Post](lreddit_post)**
+    !!! quote
+        For questions and help, a great place to go is the `r/BitLifeRebels`
+        subreddit. My bot, **BitBot**, automatically posts the newest
+        `MonetizationVars` file there as soon as it's released.
+        **[Go to the Latest BitBot Post](lreddit_post)**
     <!-- prettier-ignore-end -->
 
 - **The mod is PERMANENT.** You only need to do this once.
@@ -125,10 +124,10 @@ important step.
 - **Shizuku isn't permanent.**
 
     <!-- prettier-ignore-start -->
-
-  !!! warning You must restart Shizuku using Wireless Debugging every time you
-  reboot your phone. You only need to do this if you plan on browsing
-  `Android/data`, not for the mod to work.
+    !!! warning
+        You must restart Shizuku using Wireless Debugging every time
+        you reboot your phone. You only need to do this if you plan on browsing
+        `Android/data`, not for the mod to work.
     <!-- prettier-ignore-end -->
 
 Once finished, force close BitLife and open it again. Everything will be
