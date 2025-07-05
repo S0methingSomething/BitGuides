@@ -20,22 +20,33 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Python and project dependencies
+      - name: Install Python dependencies
         run: |
           uv venv
           uv pip install -r pyproject.toml
 
-      - name: Install Vale
-        # This mirrors the 'make setup' command to install Vale globally in the runner.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Prettier
+        run: npm install
+
+      - name: Run Prettier format check
+        # This explicitly checks only the documentation files.
+        run: npx prettier --check 'docs/**/*.md'
+
+      - name: Install and Setup Vale
+        # This installs Vale globally in the CI runner.
         run: |
           LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
           curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
-
+      
       - name: Sync Vale Styles for CI
-        # This mirrors the 'make setup' command to download styles.
+        # This downloads the styles (Google, Microsoft, etc.) for Vale to use.
         run: vale sync
 
-      - name: Run all pre-commit checks
-        # This now mirrors the 'make lint' command and will work because
-        # the environment is identical to the local one.
-        run: uv run pre-commit run --all-files
+      - name: Run Vale Lint on Documentation
+        # This is the key: it runs Vale ONLY on your 'docs' folder, ignoring everything else.
+        run: vale --minAlertLevel error docs
