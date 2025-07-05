@@ -10,8 +10,9 @@
 
 ## Requirements
 
-You need four things to get started. The main download link for the MonetizationVars file is
-always updated here, but you can also find it in the community Reddit post.
+You need four things to get started. The main download link for the
+MonetizationVars file is always updated here, but you can also find it in the
+community Reddit post.
 
 - **Shizuku**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
