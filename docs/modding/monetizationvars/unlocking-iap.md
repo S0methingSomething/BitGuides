@@ -71,7 +71,7 @@ important step.
 
 ### Step 4: Make the Mod Permanent
 
-1.  In the same folder (`.../files/`), find the file named `LiveDictionary`.
+1.  In the same folder (`.../data/`), find the file named `LiveDictionary`.
 2.  **Delete** the `LiveDictionary` file.
     > ![Deleting the LiveDictionary file](../../assets/perm-delete-livedictionary.png)
 3.  Create a new **folder** (not a file) and name it exactly `LiveDictionary`.
