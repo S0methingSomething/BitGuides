@@ -83,7 +83,7 @@ important step.
 ## Advanced Customization with BitEdit
 
 <!-- prettier-ignore-start -->
-!!! tip "For Power Users: Create a Custom Mod"
+!!! tip "For Power Users: Create a MonetizationVars Mod"
 
     If you want more control and wish to enable or disable specific things yourself on MonetizationVars, you can use my other project, **BitEdit**.
 
