@@ -47,7 +47,7 @@ important step.
     > **WARNING**: Shizuku must be running already for this to work.
     > ![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png)
 6.  Enable the option **Use for Android/data and Android/obb**.
-    > ![Enable 'Use for data' option](./assets/zarchiver-enable-data-access.png)
+    > ![Enable 'Use for Android/[data|obb]' option](./assets/zarchiver-enable-data-access.png)
 
 ### Step 3: Apply the Mod
 
