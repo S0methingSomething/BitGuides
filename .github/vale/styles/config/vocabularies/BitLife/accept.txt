@@ -7,3 +7,4 @@ BitBot
 BitLife
 BitGuides
 MonetizationVars
+bitlife
