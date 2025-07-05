@@ -43,7 +43,7 @@ important step.
     > ![ZArchiver settings option](./assets/zarchiver-settings.png)
 4.  Click **ROOT**.
     > ![ROOT option in settings](./assets/zarchiver-root-settings.png)
-5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
+5.  Click **Type of root Access** and select **Shizuku** from the dropdown menu.
     > **WARNING**: Shizuku must be running already for this to work.
     > ![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png)
 6.  Enable the option **Use for Android/data and Android/obb**.
