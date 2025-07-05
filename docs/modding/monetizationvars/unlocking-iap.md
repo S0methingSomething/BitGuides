@@ -44,12 +44,12 @@ important step.
 4.  Click **ROOT**.
     ![ROOT option in settings](../../assets/zarchiver-root-settings.png)
 5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
+
     <!-- prettier-ignore-start -->
 
-        !!! warning
-            Shizuku must be running already for this to work.
+    !!! warning Shizuku must be running already for this to work.
 
-            ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
+        ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
 
     <!-- prettier-ignore-end -->
 
@@ -59,11 +59,13 @@ important step.
 ### Step 3: Apply the Mod
 
 1.  Navigate to your **Download** folder.
+
     <!-- prettier-ignore-start -->
-        !!! note
-            The file must be named **exactly** `MonetizationVars` with no extra
-            extension.
+
+    !!! note The file must be named **exactly** `MonetizationVars` with no extra
+    extension.
     <!-- prettier-ignore-end -->
+
 2.  Long-press the `MonetizationVars` file and click **Copy**.
     ![Holding the file and clicking Copy](../../assets/mod-copy-file.png)
 3.  Go to the ZArchiver home screen and navigate to `Android/data/`.
@@ -109,22 +111,25 @@ important step.
 ## Final Notes & Community
 
 - **Community Support on r/BitLifeRebels**
-  <!-- prettier-ignore-start -->
-      !!! quote
-          For questions and help, a great place to go is the `r/BitLifeRebels`
-          subreddit. My bot, **BitBot**, automatically posts the newest
-          `MonetizationVars` file there as soon as it's released.
-          **[Go to the Latest BitBot Post](lreddit_post)**
-  <!-- prettier-ignore-end -->
+
+    <!-- prettier-ignore-start -->
+
+  !!! quote For questions and help, a great place to go is the `r/BitLifeRebels`
+  subreddit. My bot, **BitBot**, automatically posts the newest
+  `MonetizationVars` file there as soon as it's released.
+  **[Go to the Latest BitBot Post](lreddit_post)**
+    <!-- prettier-ignore-end -->
+
 - **The mod is PERMANENT.** You only need to do this once.
 
 - **Shizuku isn't permanent.**
-  <!-- prettier-ignore-start -->
-      !!! warning
-          You must restart Shizuku using Wireless Debugging every time
-          you reboot your phone. You only need to do this if you plan on browsing
-          `Android/data`, not for the mod to work.
-  <!-- prettier-ignore-end -->
+
+    <!-- prettier-ignore-start -->
+
+  !!! warning You must restart Shizuku using Wireless Debugging every time you
+  reboot your phone. You only need to do this if you plan on browsing
+  `Android/data`, not for the mod to work.
+    <!-- prettier-ignore-end -->
 
 Once finished, force close BitLife and open it again. Everything will be
 unlocked.
