@@ -36,9 +36,6 @@ important step.
 
 ### Step 2: Configure ZArchiver
 
-<details>
-<summary>Click here for the step-by-step ZArchiver setup</summary>
-
 1.  Open ZArchiver.
 2.  Click the three dots on the top right.
     > ![ZArchiver main menu with three dots highlighted](./assets/zarchiver-menu.png)
@@ -51,8 +48,6 @@ important step.
     > ![Dropdown menu showing Shizuku selected](./assets/zarchiver-select-shizuku.png)
 6.  Enable the option **Use for Android/data and Android/obb**.
     > ![Enable 'Use for data' option](./assets/zarchiver-enable-data-access.png)
-
-</details>
 
 ### Step 3: Apply the Mod
 
