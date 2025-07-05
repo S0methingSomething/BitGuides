@@ -1,22 +1,19 @@
-name: CI Verification and Auto-Fix
+name: CI Verification
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
 
 jobs:
   lint-and-format:
     runs-on: ubuntu-latest
-    permissions:
-      # This is required for the action to push fixes back to the PR branch.
-      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        # We need to fetch the branch history to be able to push back to it.
-        with:
-          ref: ${{ github.head_ref }}
+      - uses: actions/checkout@v4
 
       - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
@@ -27,49 +24,18 @@ jobs:
         run: |
           uv venv
           uv pip install -r pyproject.toml
+
+      - name: Install Vale
+        # This mirrors the 'make setup' command to install Vale globally in the runner.
+        run: |
+          LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
+          curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
       
-      - name: Setup pre-commit environments for CI
-        # This downloads and installs Prettier, Vale, and all styles automatically.
-        run: uv run pre-commit install-hooks
+      - name: Sync Vale Styles for CI
+        # This mirrors the 'make setup' command to download styles.
+        run: vale sync
 
       - name: Run all pre-commit checks
-        id: pre-commit
-        # We run the checks and allow the step to fail so we can analyze the result.
+        # This now mirrors the 'make lint' command and will work because
+        # the environment is identical to the local one.
         run: uv run pre-commit run --all-files
-        continue-on-error: true
-
-      - name: Check for auto-fixable changes
-        id: git-changes
-        run: |
-          # If 'git status' finds any modified files, it means Prettier fixed them.
-          if [[ -n "$(git status --porcelain)" ]]; then
-            echo "changes_found=true" >> $GITHUB_OUTPUT
-            echo "Files auto-fixed by Prettier:"
-            git status --porcelain
-          else
-            echo "changes_found=false" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Commit and push auto-fixes
-        if: steps.git-changes.outputs.changes_found == 'true'
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "style: Auto-format files with Prettier"
-          git push
-
-      - name: Check for un-fixable errors (like Vale)
-        if: steps.pre-commit.outcome == 'failure' && steps.git-changes.outputs.changes_found == 'false'
-        run: |
-          echo "❌ Pre-commit checks failed with errors that could not be auto-fixed."
-          echo "Please review the log, fix the issues locally, and push again."
-          exit 1
-          
-      - name: Final status message
-        run: |
-          if [[ "${{ steps.git-changes.outputs.changes_found }}" == "true" ]]; then
-            echo "✅ Pre-commit found and fixed formatting issues. The fixes have been pushed."
-          else
-            echo "✅ All checks passed successfully!"
-          fi
