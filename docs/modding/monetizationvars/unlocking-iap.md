@@ -10,7 +10,7 @@
 
 ## Requirements
 
-You need four things to get started. The main download link for the mod file is
+You need four things to get started. The main download link for the MonetizationVars file is
 always updated here, but you can also find it in the community Reddit post.
 
 - **Shizuku**:
