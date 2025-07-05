@@ -62,7 +62,7 @@ important step.
     > ![Shizuku permission pop-up for ZArchiver](../../assets/mod-shizuku-permission.png)
 5.  Open the **com.candywriter.bitlife** folder.
     > ![The com.candywriter.bitlife folder](../../assets/mod-bitlife-folder.png)
-6.  Then open the **files** folder.
+6.  Then open the **data** folder.
     > ![The files folder](../../assets/mod-files-folder.png)
 7.  Click the **paste icon** on the bottom right.
     > ![The paste icon location](../../assets/mod-paste-icon.png)
