@@ -1,60 +1,30 @@
-name: Lint and Validate
-
+name: CI Verification
 on:
   pull_request:
     branches: [ main ]
-    paths:
-      - 'docs/**/*.md'
-      - '.github/workflows/ci.yml'
-      - '.vale.ini'
-      - 'package.json'
-      - 'pyproject.toml'
   push:
     branches: [ main ]
-    paths:
-      - 'docs/**/*.md'
-      - '.github/workflows/ci.yml'
-      - '.vale.ini'
-      - 'package.json'
-      - 'pyproject.toml'
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
-
 jobs:
-  lint-and-validate:
+  lint-and-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Python 3.13 and uv
         uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.13'
-
-      - name: Create venv and install Python dependencies
+      - name: Install Python and project dependencies
         run: |
           uv venv
           uv pip install -r pyproject.toml
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install Prettier
-        run: npm install
-
-      - name: Run Prettier format check
-        run: npm run lint
-
-      - name: Install and Setup Vale
+      - name: Install Vale
         run: |
           LATEST_VALE_URL=$(curl -s https://api.github.com/repos/errata-ai/vale/releases/latest | jq -r '.assets[] | select(.name | endswith("Linux_64-bit.tar.gz")) | .browser_download_url')
           curl -sL ${LATEST_VALE_URL} | sudo tar xz -C /usr/local/bin vale
-          vale --version
-
-      - name: Sync Vale Styles
+      - name: Sync Vale styles for CI
         run: vale sync
-
-      - name: Run Vale Lint
-        # This will now correctly fail the job if any ERROR-level rule is found.
-        run: vale --minAlertLevel error docs
+      - name: Run all pre-commit checks
+        run: uv run pre-commit run --all-files
