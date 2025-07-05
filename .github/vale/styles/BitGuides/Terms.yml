@@ -1,0 +1,6 @@
+extends: substitution
+message: "Use 'BitLife' instead of '%s'."
+level: error
+ignorecase: true
+swap:
+  bitlife: BitLife
