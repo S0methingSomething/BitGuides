@@ -2,9 +2,9 @@ name: CI Verification
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
   push:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - 'README.md'
   workflow_dispatch:
@@ -20,16 +20,15 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Python dependencies (including pre-commit)
+      - name: Create virtual environment and install dependencies
         run: |
           uv venv
-          uv pip install -r pyproject.toml
-      
-      - name: Setup pre-commit environments
-        run: make setup
-        # This downloads and installs Prettier, Vale, and all styles automatically.
-        run: uv run pre-commit install-hooks
+          uv pip install -r requirements.txt  # or use `uv pip install .` if you use PEP 621 (pyproject.toml)
+
+      - name: Setup pre-commit and hooks
+        run: |
+          make setup
+          uv run pre-commit install-hooks
 
       - name: Run all pre-commit checks
-        # This is the single source of truth for validation, mirroring 'make lint'.
         run: uv run pre-commit run --all-files
