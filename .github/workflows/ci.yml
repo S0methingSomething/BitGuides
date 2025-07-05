@@ -26,6 +26,7 @@ jobs:
           uv pip install -r pyproject.toml
       
       - name: Setup pre-commit environments
+        run: make setup
         # This downloads and installs Prettier, Vale, and all styles automatically.
         run: uv run pre-commit install-hooks
 
