@@ -1,9 +1,9 @@
 # Welcome to BitGuides!
 
 <!-- prettier-ignore-start -->
-!!! info "Works on Android 15+ and All Modern Versions"
+!!! info "Works on Android 15+ and future Modern Versions"
 
-    This method works perfectly on all modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the protected `Android/data` folder without rooting your device.
+    This method works perfectly on future modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the `Android/data` folder without rooting your device.
 <!-- prettier-ignore-end -->
 
 ---
