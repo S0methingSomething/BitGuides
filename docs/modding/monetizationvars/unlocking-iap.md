@@ -32,25 +32,25 @@ important step.
 1. Open ZArchiver.
 2. Click the three dots on the top right.
 
-_ZArchiver main menu with three dots highlighted_
+![ZArchiver main menu with three dots highlighted](../../assets/zarchiver-three-dots.png)
 
 3. Click **Settings**.
 
-_ZArchiver settings option_
+![ZArchiver settings option](../../assets/zarchiver-settings.png)
 
 4. Click **ROOT**.
 
-_ROOT option in settings_
+![ROOT option in settings](../../assets/zarchiver-root-option.png)
 
 5. Click **Type of root Access** and select **Shizuku** from the dropdown menu.
 
 **WARNING**: Shizuku must be running already for this to work.
 
-_Dropdown menu showing Shizuku selected_
+![Dropdown menu showing Shizuku selected](../../assets/zarchiver-root-shizuku.png)
 
 6. Enable the option **Use for Android/data and Android/obb**.
 
-_Enable "Use for Android/[data|obb]" option_
+![Enable 'Use for Android/[data|obb]' option](../../assets/zarchiver-use-android-data.png)
 
 ### Step 3: Apply the Mod
 
@@ -59,42 +59,42 @@ _Enable "Use for Android/[data|obb]" option_
 
 2. Long-press the `MonetizationVars` file and click **Copy**.
 
-_Holding the file and clicking Copy_
+![Holding the file and clicking Copy](../../assets/zarchiver-copy-monetizationvars.png)
 
 3. Go to the ZArchiver home screen and navigate to `Android/data/`.
 
-_Navigating to the Android data folder_
+![Navigating to the Android data folder](../../assets/zarchiver-android-data.png)
 
 4. A Shizuku pop-up will appear. Click **Allow all the time**.
 
-_Shizuku permission pop-up for ZArchiver_
+![Shizuku permission pop-up for ZArchiver](../../assets/shizuku-permission-popup.png)
 
 5. Open the **com.candywriter.bitlife** folder.
 
-_The com.candywriter.bitlife folder_
+![The com.candywriter.bitlife folder](../../assets/zarchiver-bitlife-folder.png)
 
 6. Then open the **files** folder.
 
-_The files folder_
+![The files folder](../../assets/zarchiver-files-folder.png)
 
 7. Click the **paste icon** on the bottom right.
 
-_The paste icon location_
+![The paste icon location](../../assets/zarchiver-paste-icon.png)
 
 8. When asked to "Overwrite File?," check the box and click **REPLACE**.
 
-_Overwrite file confirmation pop-up_
+![Overwrite file confirmation pop-up](../../assets/zarchiver-overwrite-confirmation.png)
 
 ### Step 4: Make the Mod Permanent
 
 1. In the same folder (`.../files/`), find the file named `LiveDictionary`.
 2. **Delete** the `LiveDictionary` file.
 
-_Deleting the LiveDictionary file_
+![Deleting the LiveDictionary file](../../assets/delete-livedictionary.png)
 
 3. Create a new **folder** (not a file) and name it exactly `LiveDictionary`.
 
-_Creating the new LiveDictionary folder_
+![Creating the new LiveDictionary folder](../../assets/create-livedictionary-folder.png)
 
 ## Advanced Customization with BitEdit
 
