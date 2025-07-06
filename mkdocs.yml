@@ -40,9 +40,6 @@ nav:
       - "How to": "gameplay/how-to.md"
   - "Modding":
       - "MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
-      - "APK's":
-          - "WARNING": "modding/apks/warning.md"
-          - "Mod apk sources": "modding/apks/sources.md"
 
 markdown_extensions:
   - admonition
