@@ -59,7 +59,7 @@ important step.
 !!! warning "IMPORTANT: ZArchiver Permission Settings"
     **ONLY** enable **"Use for Android/[data|obb]"** option.
 
-    **DO NOT ENABLE "File operations"** - this can cause issues with the mod installation process.
+    **DO NOT ENABLE "File operations"**
 
     Only the Android/data access is needed for this guide to work properly.
 <!-- prettier-ignore-end -->
