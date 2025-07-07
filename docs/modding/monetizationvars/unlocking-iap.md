@@ -52,10 +52,19 @@ important step.
     ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
 <!-- prettier-ignore-end -->
 
-6.  Enable the option **Use for Android/data and Android/obb**.
+6.  Enable the option **Use for Android/[data|obb]**.
     ![Enable 'Use for data' option](../../assets/zarchiver-enable-data-access.png)
 
-### Step 3: Apply the Mod
+<!-- prettier-ignore-start -->
+!!! warning "IMPORTANT: ZArchiver Permission Settings"
+    **ONLY** enable **"Use for Android/[data|obb]"** option.
+
+    **DO NOT ENABLE "File operations"** - this can cause issues with the mod installation process.
+
+    Only the Android/data access is needed for this guide to work properly.
+<!-- prettier-ignore-end -->
+
+### Step 3: Apply new MonetizationVars
 
 1.  Navigate to your **Download** folder.
 
@@ -128,6 +137,21 @@ important step.
     You must restart Shizuku using Wireless Debugging every time
     you reboot your phone. You only need to do this if you plan on browsing
     `Android/data`, not for the mod to work.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+!!! info "When BitLife Updates with New IAP"
+    When BitLife releases a new update with new In-App Purchases (IAP), you'll need to get the latest MonetizationVars file and replace it again.
+
+    **You DON'T need to:**
+    - Set up ZArchiver again
+    - Configure Shizuku permissions again
+
+    **You ONLY need to:**
+    - Download the latest MonetizationVars file
+    - Follow **Step 3** (Apply new MonetizationVars) to replace the old file
+
+    The setup is permanent - only the MonetizationVars file needs updating when BitLife adds new content.
 <!-- prettier-ignore-end -->
 
 Once finished, force close BitLife and open it again. Everything will be
