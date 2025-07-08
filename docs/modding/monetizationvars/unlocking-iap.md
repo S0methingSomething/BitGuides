@@ -59,7 +59,7 @@ important step.
 !!! warning "IMPORTANT: ZArchiver Permission Settings"
     **ONLY** enable **"Use for Android/[data|obb]"** option.
 
-    **DO NOT ENABLE "File operations"** - this can cause issues with the mod installation process.
+    **DO NOT ENABLE "File operations"**
 
     Only the Android/data access is needed for this guide to work properly.
 <!-- prettier-ignore-end -->
@@ -82,8 +82,8 @@ important step.
     ![Shizuku permission pop-up for ZArchiver](../../assets/mod-shizuku-permission.png)
 5.  Open the **com.candywriter.bitlife** folder.
     ![The com.candywriter.bitlife folder](../../assets/mod-bitlife-folder.png)
-6.  Then open the **data** folder.
-    ![The files folder](../../assets/mod-files-folder.png)
+6.  Navigate to the **files** folder.
+    ![The files folder](../../assets/mod-nav-bitlife-files.png)
 7.  Click the **paste icon** on the bottom right.
     ![The paste icon location](../../assets/mod-paste-icon.png)
 8.  When asked to "Overwrite File?," check the box and click **REPLACE**.
@@ -148,6 +148,7 @@ important step.
     - Configure Shizuku permissions again
 
     **You ONLY need to:**
+    - Activate Shizuku
     - Download the latest MonetizationVars file
     - Follow **Step 3** (Apply new MonetizationVars) to replace the old file
 
