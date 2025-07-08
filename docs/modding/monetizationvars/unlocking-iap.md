@@ -76,22 +76,24 @@ important step.
 
 2.  Long-press the `MonetizationVars` file and click **Copy**.
     ![Holding the file and clicking Copy](../../assets/mod-copy-file.png)
-3.  Go to the ZArchiver home screen and navigate to `Android/data/`.
-    ![Navigating to the Android data folder](../../assets/mod-nav-android-data.png)
+3.  Go to the ZArchiver home screen and navigate to the **Android** folder.
+    ![Navigating to the Android folder](../../assets/mod-nav-android.png)
 4.  A Shizuku pop-up will appear. Click **Allow all the time**.
     ![Shizuku permission pop-up for ZArchiver](../../assets/mod-shizuku-permission.png)
-5.  Open the **com.candywriter.bitlife** folder.
+5.  Navigate to the **data** folder.
+    ![Navigating to the data folder](../../assets/mod-nav-data.png)
+6.  Open the **com.candywriter.bitlife** folder.
     ![The com.candywriter.bitlife folder](../../assets/mod-bitlife-folder.png)
-6.  Navigate to the **files** folder.
+7.  Navigate to the **files** folder.
     ![The files folder](../../assets/mod-nav-bitlife-files.png)
-7.  Click the **paste icon** on the bottom right.
+8.  Click the **paste icon** on the bottom right.
     ![The paste icon location](../../assets/mod-paste-icon.png)
-8.  When asked to "Overwrite File?," check the box and click **REPLACE**.
+9.  When asked to "Overwrite File?," check the box and click **REPLACE**.
     ![Overwrite file confirmation pop-up](../../assets/mod-overwrite-confirm.png)
 
 ### Step 4: Make the Mod Permanent
 
-1.  In the same folder (`.../data/`), find the file named `LiveDictionary`.
+1.  In the same folder (`.../files/`), find the file named `LiveDictionary`.
 2.  **Delete** the `LiveDictionary` file.
     ![Deleting the LiveDictionary file](../../assets/perm-delete-livedictionary.png)
 3.  Create a new **folder** (not a file) and name it exactly `LiveDictionary`.
