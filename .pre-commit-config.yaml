@@ -10,7 +10,8 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
     -   id: prettier
-        types: [markdown]
+        files: ^docs/.*\.md$
+        # Remove the 'types: [markdown]' line and use 'files' instead
 
 -   repo: local
     hooks:
@@ -18,5 +19,4 @@ repos:
         name: vale
         language: system
         entry: vale --minAlertLevel=error --config=.vale.ini
-        # This is the key: it now ONLY looks inside the docs/ folder.
         files: ^docs/.*\.md$

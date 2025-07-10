@@ -20,6 +20,7 @@ theme:
     - search.suggest
     - search.highlight
     - toc.integrate
+    - announce.dismiss
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -40,6 +41,13 @@ nav:
       - "How to": "gameplay/how-to.md"
   - "Modding":
       - "MonetizationVars": "modding/monetizationvars/unlocking-iap.md"
+
+extra:
+  announcement:
+    content: |
+      <strong>Made by:</strong> <a href="https://github.com/S0methingSomething" target="_blank">S0methingSomething</a> |
+      <strong>For support visit:</strong> <a href="https://www.reddit.com/r/BitLifeRebels/" target="_blank">r/BitLifeRebels</a> |
+      <strong>If you want me to create a guide or general feedback DM me:</strong> <a href="https://www.reddit.com/u/C1oudyLol/" target="_blank">r/C1oudyLol</a> or go to BitBot's latest post
 
 markdown_extensions:
   - admonition
