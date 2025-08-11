@@ -58,6 +58,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: bitguides
-          directory: site
+          command: pages deploy site --project-name=bitguides
           gitHubToken: ${{ secrets.GH_TOKEN }}
