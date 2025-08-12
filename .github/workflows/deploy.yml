@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  deployments: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -34,6 +33,38 @@ jobs:
       - name: Load dynamic link configuration
         uses: antifree/json-to-variables@v1
         with:
+          filename: 'site_config.json'
+
+      - name: Fetch dynamic links and replace placeholders
+        run: |
+          MON_URL=$(curl -sL https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/latest | jq -r '.assets[] | select(.name=="${{ env.sources_monetization_asset }}") | .browser_download_url')
+          REDDIT_ID=$(curl -sL https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_path }} | jq -r .activePostId)
+          REDDIT_URL="${{ env.links_reddit_base_url }}${REDDIT_ID}/"
+
+          find docs -type f -name "*.md" -exec sed -i "s|${{ env.placeholders_monetization }}|${MON_URL}|g" {} +
+          find docs -type f -name "*.md" -exec sed -i "s|${{ env.placeholders_reddit }}|${REDDIT_URL}|g" {} +
+
+          echo "Placeholders replaced."
+
+      # Build the static site for Cloudflare Pages
+      - name: Build site with MkDocs
+        run: uv run mkdocs build --clean
+
+      # Publish the 'site' directory to Cloudflare Pages (Direct Upload)
+      - name: Publish to Cloudflare Pages (production)
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+          directory: site
+          # Set to your production branch name for a production deployment
+          branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      # Deploy to GitHub Pages as before
+      - name: Deploy to GitHub Pages
+        run: uv run mkdocs gh-deploy --force
           filename: 'site_config.json'
 
       - name: Fetch dynamic links and replace placeholders
