@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages and Cloudflare Pages (gh-pages)
+name: Deploy to GitHub Pages and Cloudflare Pages (wrangler-action)
 
 on:
   push:
@@ -34,6 +34,49 @@ jobs:
           if [ -f requirements.txt ]; then
             uv pip install -r requirements.txt
           elif [ -f pyproject.toml ]; then
+            uv pip install -e .
+          else
+            uv pip install mkdocs
+          fi
+
+      - name: Load dynamic link configuration
+        uses: antifree/json-to-variables@v1
+        with:
+          filename: 'site_config.json'
+
+      - name: Fetch dynamic links and replace placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          MON_URL=$(curl -sSL "https://api.github.com/repos/${{ env.sources_monetization_repo }}/releases/latest" \
+            | jq -r --arg name "${{ env.sources_monetization_asset }}" '.assets[] | select(.name==$name) | .browser_download_url')
+          REDDIT_ID=$(curl -sSL "https://raw.githubusercontent.com/${{ env.sources_bot_state_repo }}/${{ env.sources_bot_state_path }}" \
+            | jq -r '.activePostId')
+          REDDIT_URL="${{ env.links_reddit_base_url }}${REDDIT_ID}/"
+
+          find docs -type f -name '*.md' -print0 | xargs -0 sed -i "s|${{ env.placeholders_monetization }}|${MON_URL}|g"
+          find docs -type f -name '*.md' -print0 | xargs -0 sed -i "s|${{ env.placeholders_reddit }}|${REDDIT_URL}|g"
+
+          echo "Placeholders replaced."
+
+      - name: Deploy to GitHub Pages (push to gh-pages)
+        run: uv run mkdocs gh-deploy --force
+
+      - name: Prepare gh-pages worktree for Cloudflare upload
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin gh-pages:gh-pages
+          rm -rf gh-pages-worktree
+          git worktree add gh-pages-worktree gh-pages
+          echo "Prepared worktree at gh-pages-worktree"
+
+      - name: Publish gh-pages contents to Cloudflare Pages (wrangler)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy gh-pages-worktree --project-name ${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch gh-pages
             uv pip install -e .
           else
             uv pip install mkdocs
