@@ -71,9 +71,21 @@ jobs:
           git worktree add gh-pages-worktree gh-pages
           echo "Prepared worktree at gh-pages-worktree"
 
+      # Optional safety: create the Pages project if it doesn't exist yet.
+      # If it already exists, this will fail but we ignore the error and continue.
+      - name: Create Cloudflare Pages project if missing
+        uses: cloudflare/wrangler-action@v3
+        continue-on-error: true
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: '4'
+          command: pages project create ${{ vars.CLOUDFLARE_PAGES_PROJECT }} --production-branch gh-pages
+
       - name: Publish gh-pages contents to Cloudflare Pages (wrangler)
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy gh-pages-worktree --project-name ${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch gh-pages
+          wranglerVersion: '4'
+          command: pages deploy gh-pages-worktree --project-name ${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch gh-pages --commit-dirty=true
