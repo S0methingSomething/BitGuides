@@ -1,11 +1,11 @@
 # Welcome to BitGuides!
 
+<sub>Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)</sub>
+
 <!-- prettier-ignore-start -->
 !!! warning "MonetizationVars File Update Required"
     The MonetizationVars file is outdated and won't be updated for a while. To get the latest version, head over to [u/BitLifeRebels](https://www.reddit.com/r/BitLifeRebels/) and search for "MonetizationVars".
 <!-- prettier-ignore-end -->
-
-**Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)**
 
 <!-- prettier-ignore-start -->
 !!! info "Works on Android 15+ and future Modern Versions"
