@@ -1,5 +1,10 @@
 # Welcome to BitGuides!
 
+<!-- prettier-ignore-start -->
+!!! warning "MonetizationVars File Update Required"
+    The MonetizationVars file is outdated and won't be updated for a while. To get the latest version, head over to [u/BitLifeRebels](https://www.reddit.com/r/BitLifeRebels/) and search for "MonetizationVars".
+<!-- prettier-ignore-end -->
+
 **Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)**
 
 <!-- prettier-ignore-start -->
@@ -48,7 +53,7 @@ important step.
 5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
 
 <!-- prettier-ignore-start -->
-!!! warning
+!!! warning "Shizuku Must Be Running"
     Shizuku must be running already for this to work.
 
     ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
@@ -71,7 +76,7 @@ important step.
 1.  Navigate to your **Download** folder.
 
 <!-- prettier-ignore-start -->
-!!! note
+!!! note "File Naming Requirements"
     The file must be named **exactly** `MonetizationVars` with no extra
     extension.
 <!-- prettier-ignore-end -->
@@ -125,7 +130,7 @@ important step.
 - **Community Support on r/BitLifeRebels**
 
 <!-- prettier-ignore-start -->
-!!! quote
+!!! quote "Get Help and Updates"
     For questions and help, a great place to go is the `r/BitLifeRebels`
     subreddit. My bot, **BitBot**, automatically posts the newest
     `MonetizationVars` file there as soon as it's released.
@@ -137,7 +142,7 @@ important step.
 - **Shizuku isn't permanent.**
 
 <!-- prettier-ignore-start -->
-!!! warning
+!!! warning "Restart Shizuku After Reboot"
     You must restart Shizuku using Wireless Debugging every time
     you reboot your phone. You only need to do this if you plan on browsing
     `Android/data`, not for the mod to work.
