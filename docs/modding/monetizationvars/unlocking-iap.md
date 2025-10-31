@@ -22,6 +22,12 @@ community Reddit post.
 
 - **Shizuku**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+
+<!-- prettier-ignore-start -->
+!!! info "Can't Download Shizuku from Play Store?"
+    If the Play Store says "This app isn't available for your device" or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+<!-- prettier-ignore-end -->
+
 - **ZArchiver**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
 - **BitLife**:
@@ -43,14 +49,14 @@ important step.
 
 ### Step 2: Configure ZArchiver
 
-1.  Open ZArchiver.
-2.  Click the three dots on the top right.
-    ![ZArchiver main menu with three dots highlighted](../../assets/zarchiver-menu.png)
-3.  Click **Settings**.
-    ![ZArchiver settings option](../../assets/zarchiver-settings.png)
-4.  Click **ROOT**.
-    ![ROOT option in settings](../../assets/zarchiver-root-settings.png)
-5.  Click **Root Access** and select **Shizuku** from the dropdown menu.
+1. Open ZArchiver.
+2. Click the three dots on the top right.
+   ![ZArchiver main menu with three dots highlighted](../../assets/zarchiver-menu.png)
+3. Click **Settings**.
+   ![ZArchiver settings option](../../assets/zarchiver-settings.png)
+4. Click **ROOT**.
+   ![ROOT option in settings](../../assets/zarchiver-root-settings.png)
+5. Click **Root Access** and select **Shizuku** from the dropdown menu.
 
 <!-- prettier-ignore-start -->
 !!! warning "Shizuku Must Be Running"
@@ -59,8 +65,8 @@ important step.
     ![Dropdown menu showing Shizuku selected](../../assets/zarchiver-select-shizuku.png)
 <!-- prettier-ignore-end -->
 
-6.  Enable the option **Use for Android/[data|obb]**.
-    ![Enable 'Use for data' option](../../assets/zarchiver-enable-data-access.png)
+6. Enable the option **Use for Android/[data|obb]**.
+   ![Enable 'Use for data' option](../../assets/zarchiver-enable-data-access.png)
 
 <!-- prettier-ignore-start -->
 !!! warning "IMPORTANT: ZArchiver Permission Settings"
@@ -73,7 +79,7 @@ important step.
 
 ### Step 3: Apply new MonetizationVars
 
-1.  Navigate to your **Download** folder.
+1. Navigate to your **Download** folder.
 
 <!-- prettier-ignore-start -->
 !!! note "File Naming Requirements"
@@ -81,30 +87,30 @@ important step.
     extension.
 <!-- prettier-ignore-end -->
 
-2.  Long-press the `MonetizationVars` file and click **Copy**.
-    ![Holding the file and clicking Copy](../../assets/mod-copy-file.png)
-3.  Go to the ZArchiver home screen and navigate to the **Android** folder.
-    ![Navigating to the Android folder](../../assets/mod-nav-android.png)
-4.  A Shizuku pop-up will appear. Click **Allow all the time**.
-    ![Shizuku permission pop-up for ZArchiver](../../assets/mod-shizuku-permission.png)
-5.  Navigate to the **data** folder.
-    ![Navigating to the data folder](../../assets/mod-nav-data.png)
-6.  Open the **com.candywriter.bitlife** folder.
-    ![The com.candywriter.bitlife folder](../../assets/mod-bitlife-folder.png)
-7.  Navigate to the **files** folder.
-    ![The files folder](../../assets/mod-nav-bitlife-files.png)
-8.  Click the **paste icon** on the bottom right.
-    ![The paste icon location](../../assets/mod-paste-icon.png)
-9.  When asked to "Overwrite File?," check the box and click **REPLACE**.
-    ![Overwrite file confirmation pop-up](../../assets/mod-overwrite-confirm.png)
+2. Long-press the `MonetizationVars` file and click **Copy**.
+   ![Holding the file and clicking Copy](../../assets/mod-copy-file.png)
+3. Go to the ZArchiver home screen and navigate to the **Android** folder.
+   ![Navigating to the Android folder](../../assets/mod-nav-android.png)
+4. A Shizuku pop-up will appear. Click **Allow all the time**.
+   ![Shizuku permission pop-up for ZArchiver](../../assets/mod-shizuku-permission.png)
+5. Navigate to the **data** folder.
+   ![Navigating to the data folder](../../assets/mod-nav-data.png)
+6. Open the **com.candywriter.bitlife** folder.
+   ![The com.candywriter.bitlife folder](../../assets/mod-bitlife-folder.png)
+7. Navigate to the **files** folder.
+   ![The files folder](../../assets/mod-nav-bitlife-files.png)
+8. Click the **paste icon** on the bottom right.
+   ![The paste icon location](../../assets/mod-paste-icon.png)
+9. When asked to "Overwrite File?," check the box and click **REPLACE**.
+   ![Overwrite file confirmation pop-up](../../assets/mod-overwrite-confirm.png)
 
 ### Step 4: Make the Mod Permanent
 
-1.  In the same folder (`.../files/`), find the file named `LiveDictionary`.
-2.  **Delete** the `LiveDictionary` file.
-    ![Deleting the LiveDictionary file](../../assets/perm-delete-livedictionary.png)
-3.  Create a new **folder** (not a file) and name it exactly `LiveDictionary`.
-    ![Creating the new LiveDictionary folder](../../assets/perm-create-folder.png)
+1. In the same folder (`.../files/`), find the file named `LiveDictionary`.
+2. **Delete** the `LiveDictionary` file.
+   ![Deleting the LiveDictionary file](../../assets/perm-delete-livedictionary.png)
+3. Create a new **folder** (not a file) and name it exactly `LiveDictionary`.
+   ![Creating the new LiveDictionary folder](../../assets/perm-create-folder.png)
 
 ---
 
