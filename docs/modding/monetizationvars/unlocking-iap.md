@@ -12,6 +12,16 @@
     This method works perfectly on future modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the `Android/data` folder without rooting your device.
 <!-- prettier-ignore-end -->
 
+<!-- prettier-ignore-start -->
+!!! warning "Known Issue: Restricted ADB Permissions on MIUI/ColorOS"
+    If you're using **MIUI** or **ColorOS** on Android 15+, Shizuku may display a warning: *"Your device manufacturer has restricted adb permissions."*
+    
+    **Workaround (requires a computer):**  
+    [Shizuku Guide - Start via Wireless Debugging](https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging-start-by-connecting-to-a-computer-the-permission-of-adb-is-limited)
+    
+    Unfortunately, I cannot provide further support for these specific device restrictions beyond this method.
+<!-- prettier-ignore-end -->
+
 ---
 
 ## Requirements
