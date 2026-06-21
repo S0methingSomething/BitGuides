@@ -1,4 +1,3 @@
-BitBot
 BitEdit
 BitGuides
 BitLife

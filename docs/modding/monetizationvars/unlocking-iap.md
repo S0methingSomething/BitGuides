@@ -3,23 +3,13 @@
 <sub>Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)</sub>
 
 <!-- prettier-ignore-start -->
-!!! warning "MonetizationVars File Update Required"
-    The MonetizationVars file is outdated and won't be updated for a while. To get the latest version, head over to [u/BitLifeRebels](https://www.reddit.com/r/BitLifeRebels/) and search for "MonetizationVars".
+!!! warning "BitBot Is Archived"
+    The **BitBot** project that previously provided automated MonetizationVars downloads and Reddit post management has been **fully archived and is no longer functional**. All links and scripts related to BitBot have been removed. To get the latest MonetizationVars file, search for "MonetizationVars" on [r/BitLifeRebels](https://www.reddit.com/r/BitLifeRebels/).
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 !!! info "Works on Android 15+ and future Modern Versions"
     This method works perfectly on future modern Android versions, including the latest **Android 15+**. It uses Shizuku, which is currently the **most stable and reliable method** for accessing the `Android/data` folder without rooting your device.
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-!!! warning "Known Issue: Restricted ADB Permissions on MIUI/ColorOS"
-    If you're using **MIUI** or **ColorOS** on Android 15+, Shizuku may display a warning: *"Your device manufacturer has restricted adb permissions."*
-    
-    **Workaround (requires a computer):**  
-    [Shizuku Guide - Start via Wireless Debugging](https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging-start-by-connecting-to-a-computer-the-permission-of-adb-is-limited)
-    
-    Unfortunately, I cannot provide further support for these specific device restrictions beyond this method.
 <!-- prettier-ignore-end -->
 
 ---
@@ -32,17 +22,36 @@ community Reddit post.
 
 - **Shizuku**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+  or [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
 
 <!-- prettier-ignore-start -->
 !!! info "Can't Download Shizuku from Play Store?"
-    If the Play Store says "This app isn't available for your device" or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+    If the Play Store says:
+    
+    > **`"This app isn't available for your device"`**
+    
+    or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+!!! warning "Restricted ADB Permissions on MIUI/ColorOS/Flyme"
+    If you're using **MIUI (Xiaomi/POCO)**, **ColorOS (OPPO/OnePlus)**, or **Flyme (Meizu)**, Shizuku may display a warning:
+
+    > **`"Your device manufacturer has restricted adb permissions."`**
+    
+    The preferred solution is to view the official [Shizuku Guide on Restricted Permissions](https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging-start-by-connecting-to-a-computer-the-permission-of-adb-is-limited) or adjust your **Developer options** settings directly:
+    
+    *   **MIUI (Xiaomi/POCO):** Enable **"USB debugging (Security options)"** (this is a separate option from standard USB debugging).
+    *   **ColorOS (OPPO/OnePlus):** Disable **"Permission monitoring"**.
+    *   **Flyme (Meizu):** Disable **"Flyme payment protection"**.
 <!-- prettier-ignore-end -->
 
 - **ZArchiver**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver)
 - **BitLife**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
-- **MonetizationVars File**: **[Download Latest Version](l_monetizationvars)**
+- **MonetizationVars File**: Search for it on
+  [r/BitLifeRebels](https://www.reddit.com/r/BitLifeRebels/)
 
 ---
 
@@ -141,28 +150,7 @@ important step.
 
 ---
 
-## Final Notes & Community
-
-- **Community Support on r/BitLifeRebels**
-
-<!-- prettier-ignore-start -->
-!!! quote "Get Help and Updates"
-    For questions and help, a great place to go is the `r/BitLifeRebels`
-    subreddit. My bot, **BitBot**, automatically posts the newest
-    `MonetizationVars` file there as soon as it's released.
-    **[Go to the Latest BitBot Post](lreddit_post)**
-<!-- prettier-ignore-end -->
-
-- **The mod is PERMANENT.** You only need to do this once.
-
-- **Shizuku isn't permanent.**
-
-<!-- prettier-ignore-start -->
-!!! warning "Restart Shizuku After Reboot"
-    You must restart Shizuku using Wireless Debugging every time
-    you reboot your phone. You only need to do this if you plan on browsing
-    `Android/data`, not for the mod to work.
-<!-- prettier-ignore-end -->
+## Troubleshooting & Updates
 
 <!-- prettier-ignore-start -->
 !!! info "When BitLife Updates with New IAP"
