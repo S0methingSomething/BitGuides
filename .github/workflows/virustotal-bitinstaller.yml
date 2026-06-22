@@ -1,0 +1,141 @@
+name: Update BitInstaller VirusTotal scan
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan latest BitInstaller APK
+        env:
+          VIRUSTOTAL_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          import sys
+          import time
+          import urllib.error
+          import urllib.request
+
+          guide_path = "docs/modding/monetizationvars/bitinstaller.md"
+          repo_api = "https://api.github.com/repos/S0methingSomething/BitInstaller-dev/releases"
+          vt_api_key = os.environ["VIRUSTOTAL_API_KEY"]
+          github_token = os.environ.get("GITHUB_TOKEN", "")
+
+          if not vt_api_key:
+              sys.exit("Missing VIRUSTOTAL_API_KEY repository secret")
+
+          def request_json(url, *, method="GET", headers=None, data=None):
+              request_headers = headers or {}
+              if github_token and url.startswith("https://api.github.com/"):
+                  request_headers.setdefault("Authorization", f"Bearer {github_token}")
+              request_headers.setdefault("Accept", "application/json")
+              request = urllib.request.Request(url, data=data, method=method, headers=request_headers)
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  return json.loads(response.read().decode("utf-8"))
+
+          releases = request_json(repo_api)
+          apk_asset = None
+          release = None
+          for candidate in releases:
+              for asset in candidate.get("assets", []):
+                  if asset.get("name", "").lower().endswith(".apk"):
+                      apk_asset = asset
+                      release = candidate
+                      break
+              if apk_asset:
+                  break
+
+          if not apk_asset:
+              sys.exit("No APK asset found in BitInstaller releases")
+
+          apk_url = apk_asset["browser_download_url"]
+          apk_name = apk_asset["name"]
+          print(f"Downloading {apk_name} from {release.get('tag_name', 'latest release')}")
+
+          apk_request = urllib.request.Request(apk_url, headers={"Accept": "application/octet-stream"})
+          with urllib.request.urlopen(apk_request, timeout=180) as response:
+              apk_bytes = response.read()
+
+          sha256 = hashlib.sha256(apk_bytes).hexdigest()
+          upload_url = "https://www.virustotal.com/api/v3/files"
+
+          if len(apk_bytes) > 32 * 1024 * 1024:
+              upload_url = request_json(
+                  "https://www.virustotal.com/api/v3/files/upload_url",
+                  headers={"x-apikey": vt_api_key},
+              )["data"]
+
+          boundary = "----bitguides-virustotal-boundary"
+          body = b"".join([
+              f"--{boundary}\r\n".encode(),
+              f'Content-Disposition: form-data; name="file"; filename="{apk_name}"\r\n'.encode(),
+              b"Content-Type: application/vnd.android.package-archive\r\n\r\n",
+              apk_bytes,
+              f"\r\n--{boundary}--\r\n".encode(),
+          ])
+
+          analysis = request_json(
+              upload_url,
+              method="POST",
+              headers={
+                  "x-apikey": vt_api_key,
+                  "Content-Type": f"multipart/form-data; boundary={boundary}",
+              },
+              data=body,
+          )
+
+          analysis_id = analysis["data"]["id"]
+          analysis_url = f"https://www.virustotal.com/api/v3/analyses/{analysis_id}"
+          stats = None
+          for _ in range(30):
+              result = request_json(analysis_url, headers={"x-apikey": vt_api_key})
+              attributes = result["data"]["attributes"]
+              if attributes.get("status") == "completed":
+                  stats = attributes["stats"]
+                  break
+              time.sleep(20)
+
+          if not stats:
+              sys.exit("VirusTotal analysis did not complete in time")
+
+          detections = stats.get("malicious", 0) + stats.get("suspicious", 0)
+          total = sum(stats.values())
+          report_url = f"https://www.virustotal.com/gui/file/{sha256}/summary"
+          replacement = f"<!-- bitinstaller-vt-start --> <sub>BitInstaller VirusTotal scan: [{detections}/{total} detections]({report_url})</sub> <!-- bitinstaller-vt-end -->"
+
+          with open(guide_path, "r", encoding="utf-8") as file:
+              guide = file.read()
+
+          updated = re.sub(
+              r"<!-- bitinstaller-vt-start -->.*?<!-- bitinstaller-vt-end -->",
+              replacement,
+              guide,
+              flags=re.DOTALL,
+          )
+
+          if updated == guide:
+              print("VirusTotal line already up to date")
+          else:
+              with open(guide_path, "w", encoding="utf-8") as file:
+                  file.write(updated)
+              print(f"Updated VirusTotal scan summary to {detections}/{total}")
+          PY
+
+      - name: Commit updated scan summary
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update BitInstaller VirusTotal scan'
+          file_pattern: docs/modding/monetizationvars/bitinstaller.md

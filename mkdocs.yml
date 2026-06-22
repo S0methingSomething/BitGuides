@@ -50,8 +50,18 @@ extra:
       <strong>For support visit:</strong> <a href="https://www.reddit.com/r/BitLifeRebels/" target="_blank">r/BitLifeRebels</a> |
       <strong>If you want me to create a guide or general feedback DM me:</strong> <a href="https://www.reddit.com/u/C1oudyLol/" target="_blank">r/C1oudyLol</a>
 
+extra_css:
+  - https://cdn.plyr.io/3.7.8/plyr.css
+  - https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css
+
+extra_javascript:
+  - https://cdn.plyr.io/3.7.8/plyr.js
+  - https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js
+  - assets/media-init.js
+
 markdown_extensions:
   - admonition
+  - attr_list
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true

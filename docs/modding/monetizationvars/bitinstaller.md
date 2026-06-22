@@ -2,19 +2,14 @@
 
 <sub>Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)</sub>
 
-<!-- prettier-ignore-start -->
-!!! info "Works on Android 15+ and future Modern Versions"
-    This method works on future modern Android versions, including **Android 15+**. It uses Shizuku and BitInstaller to automate the MonetizationVars patching and Save Slot editing processes so you don't need to copy and paste files manually.
-<!-- prettier-ignore-end -->
-
----
-
 ## Requirements
 
-Before starting, make sure you download the necessary files:
+### 1. Set Up Shizuku
 
-- **Shizuku**:
-  [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+Shizuku is required before BitInstaller can patch files or edit saves.
+
+<!-- prettier-ignore -->
+[Download Shizuku from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api){ .md-button .md-button--primary }
 
 <!-- prettier-ignore-start -->
 !!! info "Can't Download Shizuku from Play Store?"
@@ -38,10 +33,36 @@ Before starting, make sure you download the necessary files:
     *   **Flyme (Meizu):** Disable **"Flyme payment protection"**.
 <!-- prettier-ignore-end -->
 
-- **BitInstaller**:
-  [Download Latest Release](https://github.com/S0methingSomething/BitInstaller-dev/releases/tag/v0.2.0-alpha)
-- **BitLife**:
-  [Download from Google Play](https://play.google.com/store/apps/details?id=com.candywriter.bitlife)
+---
+
+### 2. Install BitInstaller
+
+BitInstaller is the app used in this guide for automatic IAP unlocking and save
+editing.
+
+<!-- prettier-ignore -->
+[Download BitInstaller APK](https://github.com/S0methingSomething/BitInstaller-dev/releases/tag/v0.2.0-alpha){ .md-button .md-button--primary }
+
+<!-- vale off -->
+<!-- prettier-ignore -->
+<!-- bitinstaller-vt-start --> <sub>BitInstaller VirusTotal scan: [0/66 detections](https://www.virustotal.com/gui/file/8db37e7fc279010a789bbf5aa12b7996ab59c004c945574c16086bf4da7e78b/summary)</sub> <!-- bitinstaller-vt-end -->
+<!-- vale on -->
+
+InstallWithOptions is required to install the BitInstaller APK correctly.
+
+<!-- prettier-ignore -->
+[Download InstallWithOptions](https://github.com/zacharee/InstallWithOptions/releases/latest){ .md-button }
+
+---
+
+## How to Install BitInstaller
+
+<div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/install-with-options.mp4" type="video/mp4" />
+    Your browser doesn't support the video tag.
+  </video>
+</div>
 
 ---
 
@@ -58,12 +79,11 @@ You must start and run Shizuku using the **Wireless Debugging** method.
 
 ---
 
-### Step 2: Install and Authorize BitInstaller
+### Step 2: Open BitInstaller
 
-1. Download the `BitInstaller` APK from the releases page and install it.
-2. Open **BitInstaller**.
-3. When prompted, grant **Shizuku** permission to allow the utility to write to
-   `Android/data`.
+1. Open **BitInstaller** after installing it.
+2. When Shizuku asks for permission, tap **Allow**.
+3. Return to BitInstaller. It can now reach the BitLife files it needs.
 
 ---
 
@@ -83,9 +103,9 @@ expansions, items, Boss Mode, and God Mode globally.
 5. Exit BitInstaller, force close, and restart BitLife. All purchase options are
    active!
 
-<div style="margin: 1.5em 0; text-align: center;">
-  <video controls style="max-width: 100%; width: 450px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-    <source src="../../../assets/monetization-vars.mp4" type="video/mp4">
+<div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/monetization-vars.mp4" type="video/mp4" />
     Your browser doesn't support the video tag.
   </video>
 </div>
@@ -114,9 +134,9 @@ variable files of any active gameplay run (save slot) individually.
 6. Click the save option to write the modifications directly back to the
    `savedLife.data` file. Load the slot in BitLife to see changes.
 
-<div style="margin: 1.5em 0; text-align: center;">
-  <video controls style="max-width: 100%; width: 450px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-    <source src="../../../assets/save-editing.mp4" type="video/mp4">
+<div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/save-editing.mp4" type="video/mp4" />
     Your browser doesn't support the video tag.
   </video>
 </div>
@@ -134,11 +154,3 @@ variable files of any active gameplay run (save slot) individually.
     
     You do not need to reinstall Shizuku or BitInstaller.
 <!-- prettier-ignore-end -->
-
----
-
-## Safety Verification
-
-For reference, the VirusTotal scan verifying the safety of the release can be
-seen here:  
-**[VirusTotal Clean Report (0/66)](https://www.virustotal.com/gui/file/8db37e7fc279010a789bbf5aa12b7996ab59c004c945574c16086bf4da7e78b/summary)**
