@@ -46,6 +46,10 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -579,6 +583,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-shizuku" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Up Shizuku
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-bitinstaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install BitInstaller
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-bitinstaller" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Install BitInstaller
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -601,9 +638,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-install-and-authorize-bitinstaller" class="md-nav__link">
+  <a href="#step-2-open-bitinstaller" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Install and Authorize BitInstaller
+      Step 2: Open BitInstaller
     </span>
   </a>
   
@@ -656,15 +693,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#safety-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Safety Verification
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -702,20 +730,11 @@
 
 <h1 id="bitinstaller-automatic-method">BitInstaller (Automatic Method)</h1>
 <p><sub>Made by <a href="https://www.reddit.com/u/C1oudyLol/">u/C1oudyLol</a></sub></p>
-<!-- prettier-ignore-start -->
-<div class="admonition info">
-<p class="admonition-title">Works on Android 15+ and future Modern Versions</p>
-<p>This method works on future modern Android versions, including <strong>Android 15+</strong>. It uses Shizuku and BitInstaller to automate the MonetizationVars patching and Save Slot editing processes so you don't need to copy and paste files manually.</p>
-</div>
-<!-- prettier-ignore-end -->
-
-<hr />
 <h2 id="requirements">Requirements</h2>
-<p>Before starting, make sure you download the necessary files:</p>
-<ul>
-<li><strong>Shizuku</strong>:
-  <a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">Download from Google Play</a></li>
-</ul>
+<h3 id="1-set-up-shizuku">1. Set Up Shizuku</h3>
+<p>Shizuku is required before BitInstaller can patch files or edit saves.</p>
+<!-- prettier-ignore -->
+<p><a class="md-button md-button--primary" href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">Download Shizuku from Google Play</a></p>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title">Can't Download Shizuku from Play Store?</p>
@@ -743,12 +762,30 @@
 </div>
 <!-- prettier-ignore-end -->
 
-<ul>
-<li><strong>BitInstaller</strong>:
-  <a href="https://github.com/S0methingSomething/BitInstaller-dev/releases/tag/v0.2.0-alpha">Download Latest Release</a></li>
-<li><strong>BitLife</strong>:
-  <a href="https://play.google.com/store/apps/details?id=com.candywriter.bitlife">Download from Google Play</a></li>
-</ul>
+<hr />
+<h3 id="2-install-bitinstaller">2. Install BitInstaller</h3>
+<p>BitInstaller is the app used in this guide for automatic IAP unlocking and save
+editing.</p>
+<!-- prettier-ignore -->
+<p><a class="md-button md-button--primary" href="https://github.com/S0methingSomething/BitInstaller-dev/releases/tag/v0.2.0-alpha">Download BitInstaller APK</a></p>
+<!-- vale off -->
+<!-- prettier-ignore -->
+<!-- bitinstaller-vt-start -->
+<p><sub>BitInstaller VirusTotal scan: <a href="https://www.virustotal.com/gui/file/8db37e7fc279010a789bbf5aa12b7996ab59c004c945574c16086bf4da7e78b/summary">0/66 detections</a></sub> </p>
+<!-- vale on -->
+
+<p>InstallWithOptions is required to install the BitInstaller APK correctly.</p>
+<!-- prettier-ignore -->
+<p><a class="md-button" href="https://github.com/zacharee/InstallWithOptions/releases/latest">Download InstallWithOptions</a></p>
+<hr />
+<h2 id="how-to-install-bitinstaller">How to Install BitInstaller</h2>
+<!-- bitinstaller-vt-end --><div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/install-with-options.mp4" type="video/mp4" />
+    Your browser doesn't support the video tag.
+  </video>
+</div>
+
 <hr />
 <h2 id="setup-instructions">Setup Instructions</h2>
 <h3 id="step-1-activate-shizuku">Step 1: Activate Shizuku</h3>
@@ -760,12 +797,11 @@
 <strong><a href="https://shizuku.rikka.app/guide/setup/">https://shizuku.rikka.app/guide/setup/</a></strong></li>
 </ol>
 <hr />
-<h3 id="step-2-install-and-authorize-bitinstaller">Step 2: Install and Authorize BitInstaller</h3>
+<h3 id="step-2-open-bitinstaller">Step 2: Open BitInstaller</h3>
 <ol>
-<li>Download the <code>BitInstaller</code> APK from the releases page and install it.</li>
-<li>Open <strong>BitInstaller</strong>.</li>
-<li>When prompted, grant <strong>Shizuku</strong> permission to allow the utility to write to
-   <code>Android/data</code>.</li>
+<li>Open <strong>BitInstaller</strong> after installing it.</li>
+<li>When Shizuku asks for permission, tap <strong>Allow</strong>.</li>
+<li>Return to BitInstaller. It can now reach the BitLife files it needs.</li>
 </ol>
 <hr />
 <h2 id="app-features">App Features</h2>
@@ -782,9 +818,9 @@ expansions, items, Boss Mode, and God Mode globally.</p>
 <li>Exit BitInstaller, force close, and restart BitLife. All purchase options are
    active!</li>
 </ol>
-<div style="margin: 1.5em 0; text-align: center;">
-  <video controls style="max-width: 100%; width: 450px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-    <source src="../../../assets/monetization-vars.mp4" type="video/mp4">
+<div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/monetization-vars.mp4" type="video/mp4" />
     Your browser doesn't support the video tag.
   </video>
 </div>
@@ -812,9 +848,9 @@ variable files of any active gameplay run (save slot) individually.</p>
 <li>Click the save option to write the modifications directly back to the
    <code>savedLife.data</code> file. Load the slot in BitLife to see changes.</li>
 </ol>
-<div style="margin: 1.5em 0; text-align: center;">
-  <video controls style="max-width: 100%; width: 450px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-    <source src="../../../assets/save-editing.mp4" type="video/mp4">
+<div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
+  <video playsinline>
+    <source src="../../../assets/save-editing.mp4" type="video/mp4" />
     Your browser doesn't support the video tag.
   </video>
 </div>
@@ -832,12 +868,6 @@ variable files of any active gameplay run (save slot) individually.</p>
 <p>You do not need to reinstall Shizuku or BitInstaller.</p>
 </div>
 <!-- prettier-ignore-end -->
-
-<hr />
-<h2 id="safety-verification">Safety Verification</h2>
-<p>For reference, the VirusTotal scan verifying the safety of the release can be
-seen here:<br />
-<strong><a href="https://www.virustotal.com/gui/file/8db37e7fc279010a789bbf5aa12b7996ab59c004c945574c16086bf4da7e78b/summary">VirusTotal Clean Report (0/66)</a></strong></p>
 
 
 
@@ -896,6 +926,12 @@ seen here:<br />
     
     
       <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+      
+        <script src="../../../assets/media-init.js"></script>
       
     
   </body>
