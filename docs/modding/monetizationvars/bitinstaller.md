@@ -2,11 +2,10 @@
 
 <sub>Made by [u/C1oudyLol](https://www.reddit.com/u/C1oudyLol/)</sub>
 
-## Requirements
+## Shizuku (Required)
 
-### 1. Set Up Shizuku
-
-Shizuku is required before BitInstaller can patch files or edit saves.
+Both **BitInstaller** and **InstallWithOptions** need Shizuku running to work.
+Set this up first before downloading anything else.
 
 <!-- prettier-ignore -->
 [Download Shizuku from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api){ .md-button .md-button--primary }
@@ -19,6 +18,15 @@ Shizuku is required before BitInstaller can patch files or edit saves.
     
     or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
 <!-- prettier-ignore-end -->
+
+### Activate Shizuku
+
+You must start and run Shizuku using the **Wireless Debugging** method.
+
+1. Open Shizuku.
+2. Go to the official guide and follow the section **"Start via Wireless
+   Debugging"**:
+   **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
 
 <!-- prettier-ignore-start -->
 !!! warning "Restricted ADB Permissions on MIUI/ColorOS/Flyme"
@@ -35,7 +43,7 @@ Shizuku is required before BitInstaller can patch files or edit saves.
 
 ---
 
-### 2. Install BitInstaller
+## Install BitInstaller
 
 BitInstaller is the app used in this guide for automatic IAP unlocking and save
 editing.
@@ -53,10 +61,6 @@ InstallWithOptions is required to install the BitInstaller APK correctly.
 <!-- prettier-ignore -->
 [Download InstallWithOptions](https://github.com/zacharee/InstallWithOptions/releases/latest){ .md-button }
 
----
-
-## How to Install BitInstaller
-
 <div class="video-wrapper" style="max-width: 480px; margin: 1.5em auto;">
   <video playsinline>
     <source src="../../../assets/install-with-options.mp4" type="video/mp4" />
@@ -64,22 +68,7 @@ InstallWithOptions is required to install the BitInstaller APK correctly.
   </video>
 </div>
 
----
-
-## Setup Instructions
-
-### Step 1: Activate Shizuku
-
-You must start and run Shizuku using the **Wireless Debugging** method.
-
-1. Open Shizuku.
-2. Go to the official guide and follow the section **"Start via Wireless
-   Debugging"**:  
-   **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
-
----
-
-### Step 2: Open BitInstaller
+### Open BitInstaller
 
 1. Open **BitInstaller** after installing it.
 2. When Shizuku asks for permission, tap **Allow**.
