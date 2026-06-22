@@ -56,13 +56,6 @@ You must start and run Shizuku using the **Wireless Debugging** method.
    Debugging"**:  
    **[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)**
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin: 1em 0;">
-  <iframe src="https://www.youtube.com/embed/hGsPpd0uIco?start=1040" title="Shizuku Activation Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
-</div>
-
-<sub>_Can't view the embed?
-[Watch directly on YouTube at 17m 20 s](https://youtu.be/hGsPpd0uIco?t=17m20s)_</sub>
-
 ---
 
 ### Step 2: Install and Authorize BitInstaller
