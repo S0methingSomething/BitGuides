@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://S0methingSomething.github.io/BitGuides/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2026-06-22</lastmod>
     </url>
     <url>
          <loc>https://S0methingSomething.github.io/BitGuides/gameplay/how-to/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2026-06-22</lastmod>
     </url>
     <url>
          <loc>https://S0methingSomething.github.io/BitGuides/gameplay/tips/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2026-06-22</lastmod>
     </url>
     <url>
          <loc>https://S0methingSomething.github.io/BitGuides/modding/apks/sources/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2026-06-22</lastmod>
+    </url>
+    <url>
+         <loc>https://S0methingSomething.github.io/BitGuides/modding/monetizationvars/bitinstaller/</loc>
+         <lastmod>2026-06-22</lastmod>
     </url>
     <url>
          <loc>https://S0methingSomething.github.io/BitGuides/modding/monetizationvars/unlocking-iap/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2026-06-22</lastmod>
     </url>
 </urlset>

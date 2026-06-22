@@ -14,13 +14,15 @@
         <link rel="prev" href="../../../gameplay/how-to/">
       
       
+        <link rel="next" href="../bitinstaller/">
+      
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>MonetizationVars - BitGuides</title>
+        <title>Unlocking IAP (Manual) - BitGuides</title>
       
     
     
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MonetizationVars
+              Unlocking IAP (Manual)
             
           </span>
         </div>
@@ -514,7 +516,7 @@
   
   
   <span class="md-ellipsis">
-    MonetizationVars
+    Unlocking IAP (Manual)
     
   </span>
   
@@ -527,7 +529,7 @@
   
   
   <span class="md-ellipsis">
-    MonetizationVars
+    Unlocking IAP (Manual)
     
   </span>
   
@@ -619,9 +621,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-notes-community" class="md-nav__link">
+  <a href="#troubleshooting-updates" class="md-nav__link">
     <span class="md-ellipsis">
-      Final Notes &amp; Community
+      Troubleshooting &amp; Updates
     </span>
   </a>
   
@@ -631,6 +633,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bitinstaller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BitInstaller (Automatic)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -666,8 +691,8 @@
 <p><sub>Made by <a href="https://www.reddit.com/u/C1oudyLol/">u/C1oudyLol</a></sub></p>
 <!-- prettier-ignore-start -->
 <div class="admonition warning">
-<p class="admonition-title">MonetizationVars File Update Required</p>
-<p>The MonetizationVars file is outdated and won't be updated for a while. To get the latest version, head over to <a href="https://www.reddit.com/r/BitLifeRebels/">u/BitLifeRebels</a> and search for "MonetizationVars".</p>
+<p class="admonition-title">BitBot Is Archived</p>
+<p>The <strong>BitBot</strong> project that previously provided automated MonetizationVars downloads and Reddit post management has been <strong>fully archived and is no longer functional</strong>. All links and scripts related to BitBot have been removed. To get the latest MonetizationVars file, search for "MonetizationVars" on <a href="https://www.reddit.com/r/BitLifeRebels/">r/BitLifeRebels</a>.</p>
 </div>
 <!-- prettier-ignore-end -->
 
@@ -678,16 +703,6 @@
 </div>
 <!-- prettier-ignore-end -->
 
-<!-- prettier-ignore-start -->
-<div class="admonition warning">
-<p class="admonition-title">Known Issue: Restricted ADB Permissions on MIUI/ColorOS</p>
-<p>If you're using <strong>MIUI</strong> or <strong>ColorOS</strong> on Android 15+, Shizuku may display a warning: <em>"Your device manufacturer has restricted adb permissions."</em></p>
-<p><strong>Workaround (requires a computer):</strong><br />
-<a href="https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging-start-by-connecting-to-a-computer-the-permission-of-adb-is-limited">Shizuku Guide - Start via Wireless Debugging</a></p>
-<p>Unfortunately, I cannot provide further support for these specific device restrictions beyond this method.</p>
-</div>
-<!-- prettier-ignore-end -->
-
 <hr />
 <h2 id="requirements">Requirements</h2>
 <p>You need four things to get started. The main download link for the
@@ -695,12 +710,33 @@ MonetizationVars file is always updated here, but you can also find it in the
 community Reddit post.</p>
 <ul>
 <li><strong>Shizuku</strong>:
-  <a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">Download from Google Play</a></li>
+  <a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">Download from Google Play</a>
+  or <a href="https://github.com/RikkaApps/Shizuku/releases">Shizuku GitHub Releases</a></li>
 </ul>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title">Can't Download Shizuku from Play Store?</p>
-<p>If the Play Store says "This app isn't available for your device" or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: <a href="https://github.com/RikkaApps/Shizuku/releases">Shizuku GitHub Releases</a></p>
+<p>If the Play Store says:</p>
+<blockquote>
+<p><strong><code>"This app isn't available for your device"</code></strong></p>
+</blockquote>
+<p>or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: <a href="https://github.com/RikkaApps/Shizuku/releases">Shizuku GitHub Releases</a></p>
+</div>
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+<div class="admonition warning">
+<p class="admonition-title">Restricted ADB Permissions on MIUI/ColorOS/Flyme</p>
+<p>If you're using <strong>MIUI (Xiaomi/POCO)</strong>, <strong>ColorOS (OPPO/OnePlus)</strong>, or <strong>Flyme (Meizu)</strong>, Shizuku may display a warning:</p>
+<blockquote>
+<p><strong><code>"Your device manufacturer has restricted adb permissions."</code></strong></p>
+</blockquote>
+<p>The preferred solution is to view the official <a href="https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging-start-by-connecting-to-a-computer-the-permission-of-adb-is-limited">Shizuku Guide on Restricted Permissions</a> or adjust your <strong>Developer options</strong> settings directly:</p>
+<ul>
+<li><strong>MIUI (Xiaomi/POCO):</strong> Enable <strong>"USB debugging (Security options)"</strong> (this is a separate option from standard USB debugging).</li>
+<li><strong>ColorOS (OPPO/OnePlus):</strong> Disable <strong>"Permission monitoring"</strong>.</li>
+<li><strong>Flyme (Meizu):</strong> Disable <strong>"Flyme payment protection"</strong>.</li>
+</ul>
 </div>
 <!-- prettier-ignore-end -->
 
@@ -709,7 +745,8 @@ community Reddit post.</p>
   <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">Download from Google Play</a></li>
 <li><strong>BitLife</strong>:
   <a href="https://play.google.com/store/apps/details?id=com.candywriter.bitlife">Download from Google Play</a></li>
-<li><strong>MonetizationVars File</strong>: <strong><a href="https://github.com/S0methingSomething/BitBot/releases/download/bitlife_fr-v3.18.11/MonetizationVars">Download Latest Version</a></strong></li>
+<li><strong>MonetizationVars File</strong>: Search for it on
+  <a href="https://www.reddit.com/r/BitLifeRebels/">r/BitLifeRebels</a></li>
 </ul>
 <hr />
 <h2 id="setup-installation">Setup &amp; Installation</h2>
@@ -807,37 +844,7 @@ extension.</p>
 <!-- prettier-ignore-end -->
 
 <hr />
-<h2 id="final-notes-community">Final Notes &amp; Community</h2>
-<ul>
-<li><strong>Community Support on r/BitLifeRebels</strong></li>
-</ul>
-<!-- prettier-ignore-start -->
-<div class="admonition quote">
-<p class="admonition-title">Get Help and Updates</p>
-<p>For questions and help, a great place to go is the <code>r/BitLifeRebels</code>
-subreddit. My bot, <strong>BitBot</strong>, automatically posts the newest
-<code>MonetizationVars</code> file there as soon as it's released.
-<strong><a href="https://www.reddit.com/r/BitLifeRebels/comments/1omikfj/">Go to the Latest BitBot Post</a></strong></p>
-</div>
-<!-- prettier-ignore-end -->
-
-<ul>
-<li>
-<p><strong>The mod is PERMANENT.</strong> You only need to do this once.</p>
-</li>
-<li>
-<p><strong>Shizuku isn't permanent.</strong></p>
-</li>
-</ul>
-<!-- prettier-ignore-start -->
-<div class="admonition warning">
-<p class="admonition-title">Restart Shizuku After Reboot</p>
-<p>You must restart Shizuku using Wireless Debugging every time
-you reboot your phone. You only need to do this if you plan on browsing
-<code>Android/data</code>, not for the mod to work.</p>
-</div>
-<!-- prettier-ignore-end -->
-
+<h2 id="troubleshooting-updates">Troubleshooting &amp; Updates</h2>
 <!-- prettier-ignore-start -->
 <div class="admonition info">
 <p class="admonition-title">When BitLife Updates with New IAP</p>
