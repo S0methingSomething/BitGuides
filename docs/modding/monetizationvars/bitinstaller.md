@@ -16,7 +16,7 @@ Set this up first before downloading anything else.
     
     > **`"This app isn't available for your device"`**
     
-    or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+    or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases/latest)
 <!-- prettier-ignore-end -->
 
 ### Activate Shizuku
@@ -49,7 +49,7 @@ BitInstaller is the app used in this guide for automatic IAP unlocking and save
 editing.
 
 <!-- prettier-ignore -->
-[Download BitInstaller APK](https://github.com/S0methingSomething/BitInstaller-dev/releases/tag/v0.2.0-alpha){ .md-button .md-button--primary }
+[Download BitInstaller APK](https://github.com/S0methingSomething/BitInstaller-dev/releases/latest){ .md-button .md-button--primary }
 
 <!-- vale off -->
 <!-- prettier-ignore -->

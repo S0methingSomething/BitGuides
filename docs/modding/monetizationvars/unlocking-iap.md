@@ -22,7 +22,8 @@ community Reddit post.
 
 - **Shizuku**:
   [Download from Google Play](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
-  or [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+  or
+  [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases/latest)
 
 <!-- prettier-ignore-start -->
 !!! info "Can't Download Shizuku from Play Store?"
@@ -30,7 +31,7 @@ community Reddit post.
     
     > **`"This app isn't available for your device"`**
     
-    or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases)
+    or mentions the app was made for an older version of Android, download Shizuku directly from GitHub instead: [Shizuku GitHub Releases](https://github.com/RikkaApps/Shizuku/releases/latest)
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
