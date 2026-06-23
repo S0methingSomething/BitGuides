@@ -53,7 +53,7 @@ editing.
 
 <!-- vale off -->
 <!-- prettier-ignore -->
-<!-- bitinstaller-vt-start --> <sub>BitInstaller VirusTotal scan: [0/66 detections](https://www.virustotal.com/gui/file/8db37e7fc279010a789bbf5aa12b7996ab59c004c945574c16086bf4da7e78b/summary)</sub> <!-- bitinstaller-vt-end -->
+<!-- bitinstaller-vt-start --> <sub>BitInstaller VirusTotal scan: [0/74 detections](https://www.virustotal.com/gui/file/950689bc9b1c4707c542c6d4d442299b03da3c9b92688f5168607649aa500fa0/summary)</sub> <!-- bitinstaller-vt-end -->
 <!-- vale on -->
 
 InstallWithOptions is required to install the BitInstaller APK correctly.
